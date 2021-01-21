@@ -1,0 +1,17 @@
+    {% extends 'base.html' %}
+    {% block content %}
+    <h1>Hello World!</h1>
+    <p>This is a template page</p>
+    <p>
+        {{ my_text }}, {{ my_number }}
+        <ul>
+        {% for nome_variavel in my_list %}
+            {% if nome_variavel == 3212 %}
+                <li>{{ forloop.counter}} - {{ nome_variavel|add:22 }}</li>
+            {% else %}
+                <li>{{ forloop.counter}} - {{ nome_variavel }}</li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+    </p>
+    {% endblock %}
