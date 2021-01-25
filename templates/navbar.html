@@ -1,3 +1,4 @@
+{% load static %}
 <style>
     body {
   font-family: "Lato", sans-serif;
@@ -5,10 +6,10 @@
 
 /* Fixed sidenav, full height */
 .sidenav {
-  height: 100%;
+  height: 100vh;
   width: 200px;
-  position: fixed;
   z-index: 1;
+  display:inline-block;
   top: 0;
   left: 0;
   background-color: #111;
@@ -41,6 +42,7 @@
   margin-left: 200px; /* Same as the width of the sidenav */
   font-size: 20px; /* Increased text to enable scrolling */
   padding: 0px 10px;
+  display:inline-block;
 }
 
 /* Add an active class to the active dropdown button */
@@ -67,7 +69,6 @@
   .sidenav a {font-size: 18px;}
 }
 </style>
-
 <div class="sidenav">
   <a href="#about">Página Inicial</a>
   <a href="#services">Contratos</a>
@@ -82,7 +83,10 @@
     <a href="#">Serviço 3</a>
   </div>
   <a href="#contact">Search</a>
-</div>
+</div >
+    <div class="main">
+        asdasd
+    </div>
 <script>
 /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
 var dropdown = document.getElementsByClassName("dropdown-btn");
