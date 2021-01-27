@@ -6,15 +6,13 @@
 
 /* Fixed sidenav, full height */
 .sidenav {
-  height: 100vh;
-  width: 200px;
-  z-index: 1;
-  display:inline-block;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
+  height: 350px;
+  width: 250px;
+  float: left;
+  background-color: #eee8d0;
   padding-top: 20px;
+  margin: 15px;
+  border-radius: 10px;
 }
 
 /* Style the sidenav links and the dropdown button */
@@ -22,7 +20,7 @@
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 20px;
-  color: #818181;
+  color: #a08a5c;
   display: block;
   border: none;
   background: none;
@@ -68,25 +66,38 @@
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+.imagens {
+
+
+  margin: 2px 60% 14px 10%;
+  width:25px;
+  display:block;
+}
+a {
+  margin-left:20px;
+}
 </style>
+
 <div class="sidenav">
+  <div  style="float:left">
+    <img class="imagens" style="margin-top:3px" src="{% static  'images/home.png' %}">
+    <img class="imagens" src="{% static  'images/contratos.png' %}">
+    <img class="imagens" src="{% static  'images/licitacoes.png' %}">
+    <img class="imagens" src="{% static  'images/convenios.png' %}">
+    <img class="imagens" src="{% static  'images/compras.png' %}">
+    <img class="imagens" src="{% static  'images/funcionario.png' %}">
+    <img class="imagens" src="{% static  'images/contato.png' %}">
+  </div>
+  <div>
   <a href="#about">Página Inicial</a>
   <a href="#services">Contratos</a>
   <a href="#clients">Licitações</a>
   <a href="#contact">Compras</a>
-  <button class="dropdown-btn">Serviços
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-container">
-    <a href="#">Serviço 1</a>
-    <a href="#">Serviço 2</a>
-    <a href="#">Serviço 3</a>
+  <a href="#contact">Convênios</a>
+  <a href="#contact">Área do Funcionário</a>
+  <a href="#contact">Contato</a>
   </div>
-  <a href="#contact">Search</a>
 </div >
-    <div class="main">
-        asdasd
-    </div>
 <script>
 /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
 var dropdown = document.getElementsByClassName("dropdown-btn");

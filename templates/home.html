@@ -1,16 +1,43 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block content %}
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+{% block content %}
+
 <style>
+
+    .principal {
+      height: 550px;
+      width: 860px;
+      margin:auto;
+      margin-top:0px;
+      border-style: solid;
+      border-width: 1px;
+      background-color: white;
+    }
+    .secundario {
+      height: 350px;
+      width: 550px;
+      float: right;
+      background-color: #f7f2e7;
+      padding-top: 20px;
+      margin: 15px;
+      border-radius: 10px;
+    }
+    .titulo {
+      margin-left: 10%;
+
+    }
 </style>
-
-    <!-- <img  id="ohanaa" src="{% static 'images/home.png' %}"> -->
-    <div class="w3-c container w3-light-gray"   style="padding:20px">
-    <header style="padding-left:35%; color:#black">
-      <h1>Gerenciador de Tarefas</h1>
-    </header>
+<body   style="background-color: #f7f2e7">
+<div    class="principal">
+    <div    class="secundario">
+        <h3 class="titulo">Buscar por número do processo</h3>
     </div>
-
+    {% include 'navbar.html' %}
+    <div>
+        <h2 class="titulo">Desenvolvido por</h2>
+    </div>
+</div>
+</body>
 
 {% endblock %}
