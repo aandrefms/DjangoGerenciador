@@ -1,4 +1,6 @@
 {% load static %}
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 <style>
     body {
   font-family: "Lato", sans-serif;
@@ -19,8 +21,8 @@
 .sidenav a, .dropdown-btn {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 20px;
-  color: #a08a5c;
+  font-size: 17px;
+  color: #7d6b38;
   display: block;
   border: none;
   background: none;
@@ -28,6 +30,7 @@
   text-align: left;
   cursor: pointer;
   outline: none;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* On mouse-over */
@@ -69,12 +72,13 @@
 .imagens {
 
 
-  margin: 2px 60% 14px 10%;
-  width:25px;
+  margin: 2px 60% 14px 20%;
+  width:30px;
   display:block;
 }
 a {
-  margin-left:20px;
+  margin-left:25px;
+  margin-bottom:5px;
 }
 </style>
 
@@ -90,13 +94,13 @@ a {
     <img class="imagens" src="{% static  'images/contato.png' %}">
   </div>
   <div>
-  <a href="#about">Página Inicial</a>
-  <a href="#services">Contratos</a>
-  <a href="#clients">Licitações</a>
-  <a href="#contact">Compras</a>
-  <a href="#contact">Convênios</a>
-  <a href="#contact">Área do Funcionário</a>
-  <a href="#contact">Contato</a>
+  <a href="{% url 'home' %}">PÁGINA INICIAL</a>
+  <a href="#services">CONTRATOS</a>
+  <a href="#clients">LICITAÇÕES</a>
+  <a href="#contact">COMPRAS</a>
+  <a href="#contact">CONVÊNIOS</a>
+  <a href="#contact">ÁREA DO FUNCIONÁRIO</a>
+  <a href="{% url 'contato' %}">CONTATO</a>
   </div>
 </div >
 <script>

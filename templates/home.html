@@ -1,19 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 {% block content %}
 
 <style>
 
-    .principal {
-      height: 550px;
-      width: 860px;
-      margin:auto;
-      margin-top:0px;
-      border-style: solid;
-      border-width: 1px;
-      background-color: white;
-    }
     .secundario {
       height: 350px;
       width: 550px;
@@ -24,20 +17,29 @@
       border-radius: 10px;
     }
     .titulo {
-      margin-left: 10%;
+      margin: 5% 10% 0% 10%;
+      color: black;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .imgHome {
+        width: 25%;
+        margin-right:10%;
+        float:right;
 
     }
+
 </style>
 <body   style="background-color: #f7f2e7">
-<div    class="principal">
+
     <div    class="secundario">
-        <h3 class="titulo">Buscar por número do processo</h3>
+        <h1 class="titulo">Sistema de gerenciamento e licitações da prefeitura de Santa Inês</h1>
+        <h5 class="titulo"  style="margin: 3% auto 0% 10%; color: #7d6b38;font-family: 'Open Sans', sans-serif;">
+            Escolha ao lado o módulo que deseja acessar.</h5>
+        <img    class="imgHome"    src="{% static  'images/santa_ines.png' %}">
     </div>
     {% include 'navbar.html' %}
-    <div>
-        <h2 class="titulo">Desenvolvido por</h2>
-    </div>
-</div>
+
+
 </body>
 
 {% endblock %}
