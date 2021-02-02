@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+<style>
+
+.secundario {
+      height: 350px;
+      width: 540px;
+      float: right;
+      background-color: #f7f2e7;
+      padding-top: 20px;
+      margin: 15px;
+      border-radius: 10px;
+    }
+.form-signin {
+  width:100%;
+  max-width: 370px;
+  padding: 15px;
+  margin: 0 15% 10% 0;
+  float:right;
+
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 7px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+    </style>
+<body class="text-center"   style="background-color:#f7f2e7">
+
+<div    class="secundario">
+<main class="form-signin">
+
+  <form>
+    <h1 class="h3 mb-3 fw-normal">Entrar</h1>
+    <label for="inputEmail" class="visually-hidden">Usuário</label>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Usuário" required autofocus>
+    <label for="inputPassword" class="visually-hidden">Senha</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Lembrar
+      </label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+
+  </form>
+    </main>
+        </div>
+
+{% include 'navbar.html' %}
+  </body>
+
+{% endblock %}

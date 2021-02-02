@@ -1,6 +1,8 @@
 {% load static %}
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
 <style>
     body {
   font-family: "Lato", sans-serif;
@@ -9,7 +11,7 @@
 /* Fixed sidenav, full height */
 .sidenav {
   height: 350px;
-  width: 250px;
+  width: 258px;
   float: left;
   background-color: #eee8d0;
   padding-top: 20px;
@@ -17,7 +19,7 @@
   border-radius: 10px;
 }
 
-/* Style the sidenav links and the dropdown button */
+/* Style the sidenav links and the dropdown buttdon */
 .sidenav a, .dropdown-btn {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
@@ -78,7 +80,7 @@
 }
 a {
   margin-left:25px;
-  margin-bottom:5px;
+  margin-bottom:3px;
 }
 </style>
 
@@ -99,7 +101,7 @@ a {
   <a href="#clients">LICITAÇÕES</a>
   <a href="#contact">COMPRAS</a>
   <a href="#contact">CONVÊNIOS</a>
-  <a href="#contact">ÁREA DO FUNCIONÁRIO</a>
+  <a href="{% url 'funcionario' %}">ÁREA DO FUNCIONÁRIO</a>
   <a href="{% url 'contato' %}">CONTATO</a>
   </div>
 </div >
