@@ -3,7 +3,7 @@ from .forms import ProcessoForm
 from .models import Processo
 
 # Create your views here.
-def processo_create_view(request, *args, **kwargs):
+def processo_create_view(request):
     my_form = ProcessoForm()
     if request.method == 'POST':
         my_form = ProcessoForm(request.POST)
@@ -16,7 +16,7 @@ def processo_create_view(request, *args, **kwargs):
     context = {
         'form': my_form
     }
-    return render(request, "infra/home.html", context)
+    return render(request, "infra/processo_create.html", context)
 
 def func_view(request, *args, **kwargs):
     return render(request, 'infra/home.html', {})
@@ -37,4 +37,4 @@ def processo_list(request):
     context = {
         "object_list" : queryset
     }
-    return render(request, "infra/processo_lista.html", context)
+    return render(request, "infra/processo_list.html", context)
