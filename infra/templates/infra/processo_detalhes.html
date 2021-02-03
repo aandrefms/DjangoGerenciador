@@ -1,0 +1,4 @@
+<form   action='.'  method='POST'> {% csrf_token %}
+    <h1>Quer realmente deletar "{{ objeto.tipo_processo }}"?</h1>
+    <p><input   type="submit"  value="Yes"  onclick="return confirm('Tem certeza?')"/>  <a    href="../../">Cancel</a></p>
+</form>

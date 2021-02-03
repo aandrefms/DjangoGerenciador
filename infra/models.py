@@ -11,6 +11,5 @@ class Processo(models.Model):
     observacao = models.TextField(blank=True)
 
     def get_absolute_url(self):
-        return reverse("func", kwargs={"my_id": self.id})
-'''f"/produtos/{self.id}/"'''
-
+        return f"{self.id}/"
+'reverse("detalhes_processos", kwargs={"my_id": self.id})'

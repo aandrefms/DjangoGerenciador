@@ -1,0 +1,4 @@
+{{ object_list }}
+{% for instance in object_list %}
+<p>{{ instance.id }} - <a   href="{{ instance.get_absolute_url }}"> {{ instance.origem_processo }} {{ instance.tipo_processo }}</a></p>
+{% endfor %}

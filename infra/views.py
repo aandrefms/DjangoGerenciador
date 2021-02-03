@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from .forms import ProcessoForm
 from .models import Processo
 
@@ -20,3 +20,21 @@ def processo_create_view(request, *args, **kwargs):
 
 def func_view(request, *args, **kwargs):
     return render(request, 'infra/home.html', {})
+
+def processo_view(request, my_id):
+    obj = get_object_or_404(Processo, id=my_id)
+    if request.method == 'POST':
+        # confirmando se quer deletar
+        obj.delete()
+        return redirect('../../')
+    context = {
+        'objeto': obj
+    }
+    return render(request, "infra/processo_detalhes.html", context)
+
+def processo_list(request):
+    queryset = Processo.objects.all()
+    context = {
+        "object_list" : queryset
+    }
+    return render(request, "infra/processo_lista.html", context)
