@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'paginas',
     'infra',
-    'usuarios'
 ]
 
 MIDDLEWARE = [
@@ -73,6 +72,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'gerenciador.wsgi.application'
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
