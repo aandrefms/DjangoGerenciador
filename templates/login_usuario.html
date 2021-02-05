@@ -56,12 +56,13 @@
 <div    class="secundario">
 <main class="form-signin">
 
-  <form>
+  <form method="POST" action="">
+    {% csrf_token %}
     <h1 class="h3 mb-3 fw-normal">Entrar</h1>
     <label for="inputEmail" class="visually-hidden">Usuário</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Usuário" required autofocus>
+    <input  name="username" id="inputEmail" class="form-control" placeholder="Usuário" required autofocus>
     <label for="inputPassword" class="visually-hidden">Senha</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+    <input  name="password" type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
     <div class="checkbox mb-3">
       <label>
         <input type="checkbox" value="remember-me"> Lembrar

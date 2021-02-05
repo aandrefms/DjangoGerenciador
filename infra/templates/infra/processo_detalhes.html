@@ -1,4 +1,26 @@
-<form   action='.'  method='POST'> {% csrf_token %}
-    <h1>Quer realmente deletar "{{ objeto.tipo_processo }}"?</h1>
-    <p><input   type="submit"  value="Yes"  onclick="return confirm('Tem certeza?')"/>  <a    href="../../">Cancel</a></p>
-</form>
+<table>
+    <thead>
+        <tr>
+            <th>ID UNICO</th>
+            <th>origem_processo</th>
+            <th>tipo_processo</th>
+            <th>assunto_detalhado</th>
+            <th>natureza_processo</th>
+            <th>observacao</th>
+            <th>documentos</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ objeto.unique_id }}</td>
+            <td>{{ objeto.origem_processo }}</td>
+            <td>{{ objeto.tipo_processo }}</td>
+            <td>{{ objeto.assunto_detalhado }}</td>
+            <td>{{ objeto.natureza_processo }}</td>
+            <td>{{ objeto.observacao }}</td>
+            <td>
+            <a  href="{{ objeto.documentos.url }}"  target="_blank">Download Pdf</a></td>
+
+        </tr>
+    </tbody>
+</table>

@@ -25,6 +25,8 @@
 </head>
 <body>
 <div    class="principal">
+    <span   style="font-size:20px; color:red">Hello, {{ request.user }} </span>
+    <span><a href="{% url 'paginas:logout'%}">Logout</a></span>
 {% block content %}{% endblock %}
 </div>
 </body>

@@ -1,12 +1,9 @@
+{% load crispy_forms_tags %}
+<form   method="post"   enctype="multipart/form-data"> <input type="hidden" name="csrfmiddlewaretoken" value="7uswrLpLmWMadzBTVRU3g6Pnnr076lGPv7aNOYdn2aiDnOw3A22N7xeo2DCK4p2B">
+    {% csrf_token %}
+    {{ form|crispy }}
 
-<form   method="post"> <input type="hidden" name="csrfmiddlewaretoken" value="7uswrLpLmWMadzBTVRU3g6Pnnr076lGPv7aNOYdn2aiDnOw3A22N7xeo2DCK4p2B">
-    <li><label for="id_origem_processo">Origem do Processo:</label> <input type="text" name="origem_processo" placeholder="Origem do Processo" required id="id_origem_processo"></li>
-<li><label for="my-id">Tipo processo:</label> <textarea name="tipo_processo" cols="20" rows="20" placeholder="Descricao" class="new_class_2" id="my-id" required>
-</textarea></li>
-<li><label for="id_assunto_detalhado">Assunto detalhado:</label> <input type="text" name="assunto_detalhado" maxlength="900" required id="id_assunto_detalhado"></li>
-<li><label for="id_natureza_processo">Natureza processo:</label> <input type="text" name="natureza_processo" value="OSTENSIVO" maxlength="120" required id="id_natureza_processo"></li>
-<li><label for="id_observacao">Observacao:</label> <input type="text" name="observacao" maxlength="120" required id="id_observacao"></li>
-    <input  type="submit" value="Save"/>
+    <button  type="submit" value="Save"/>Salvar</button>
 </form>
 
 <!--
