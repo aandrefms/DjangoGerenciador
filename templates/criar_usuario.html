@@ -6,13 +6,24 @@
         <br>
     {% endfor %}
     -->
+  <h2>Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    <button type="submit">Sign up</button>
+  </form>
 
-    {{ form.username }}
-    {{ form.email }}
-    {{ form.password1 }}
-    {{ form.password2 }}
-
-    {{ form.errors }} <!-- Mostrar os erros -->
 
     <!-- MENSAGEM DE USUARIO CRIADO COM SUCESSO
         {% for message in messages %}
@@ -23,10 +34,19 @@
 
 <script>
     var form_fields = document.getElementsByTagName('input')
-		form_fields[0].placeholder='Username..';
-		form_fields[1].placeholder='Email..';
-		form_fields[2].placeholder='Enter password...';
-		form_fields[3].placeholder='Re-enter Password...';
+		form_fields[1].placeholder='Nome..';
+		form_fields[2].placeholder='Sobrenome..';
+		form_fields[3].placeholder='Username..';
+		form_fields[4].placeholder='Email..';
+		form_fields[5].placeholder='Enter password...';
+		form_fields[6].placeholder='Re-enter Password...';
+
+
+
+		for (var field in form_fields){
+			form_fields[field].className += ' form-control'
+		}
+
 </script>
 <!--
 <!DOCTYPE html>
@@ -146,7 +166,7 @@
 
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
-						Already have an account? <a href="{% url 'login' %}" class="ml-2">Login</a>
+						Already have an account? <a href="{% url 'paginas:login' %}" class="ml-2">Login</a>
 					</div>
 				</div>
 			</div>

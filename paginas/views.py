@@ -46,15 +46,15 @@ def criar_funcionario_view(request):
     if request.user.is_authenticated:
         return redirect('infra:func')
     else:
-        form = CriarUsuarioForm()
-
         if request.method == 'POST':
-            form = UserCreationForm(request.POST)
+            form = CriarUsuarioForm(request.POST)
             if form.is_valid():
                 form.save()
                 user = form.cleaned_data.get('username')
                 messages.success(request, f"Usuário {user} foi criado com sucesso")
-                return redirect('login')
+                return redirect('paginas:login')
+        else:
+            form = CriarUsuarioForm()
         context = {
             'form': form
         }

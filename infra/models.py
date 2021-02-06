@@ -7,7 +7,7 @@ from django.dispatch.dispatcher import receiver
 
 from django.urls import reverse
 
-class Processo(models.  Model):
+class Processo(models.Model):
     # unique_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     origem_processo = models.CharField(max_length=120)
     tipo_processo = models.CharField(max_length=120)
