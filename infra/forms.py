@@ -7,6 +7,8 @@ class ProcessoForm(forms.ModelForm):
         model = Processo
         fields = ('origem_processo', 'tipo_processo', 'assunto_detalhado', 'natureza_processo', 'observacao',
                   'documentos')  # Preciso colocar 'imagens' aqui caso eu insira o campo imagens
+        # fields = '__all__'
+
 
     '''origem_processo = forms.CharField(label='Origem do Processo', widget=forms.TextInput(attrs={
                                                                 'placeholder' : 'Origem do Processo'

@@ -48,3 +48,19 @@ def processo_list(request):
         "object_list" : queryset
     }
     return render(request, "infra/processo_list.html", context)
+
+
+@login_required(login_url='paginas:login')
+def processo_editar(request, pk):
+    processo = Processo.objects.get(id=pk)
+    form = ProcessoForm(instance=processo)
+    if request.method == 'POST':
+        form = ProcessoForm(request.POST, request.FILES, instance=processo)
+        if form.is_valid():
+            # now the data is good
+            # print(my_form.cleaned_data)
+            form.save()
+            # Processo.objects.create(**my_form.cleaned_data)
+            return redirect('infra:detalhes_processos', pk)
+    context = {'form':form}
+    return render (request, "infra/processo_editar.html", context)
