@@ -26,16 +26,16 @@ def processo_create_view(request):
 
 
 @login_required(login_url='paginas:login')
-def func_view(request, *args, **kwargs):
+def processo_view(request, *args, **kwargs):
     return render(request, 'infra/home.html', {})
 
 @login_required(login_url='paginas:login')
-def processo_view(request, my_id):
+def processo_detalhes(request, my_id):
     obj = get_object_or_404(Processo, id=my_id)
-    if request.method == 'POST':
+    """if request.method == 'POST':
         # confirmando se quer deletar
         obj.delete()
-        return redirect('../../')
+        return redirect('../../')"""
     context = {
         'objeto': obj
     }
@@ -61,6 +61,6 @@ def processo_editar(request, pk):
             # print(my_form.cleaned_data)
             form.save()
             # Processo.objects.create(**my_form.cleaned_data)
-            return redirect('infra:detalhes_processos', pk)
+            return redirect('infra:lista_processos')
     context = {'form':form}
     return render (request, "infra/processo_editar.html", context)

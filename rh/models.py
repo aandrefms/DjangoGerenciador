@@ -34,3 +34,7 @@ class Funcionario(models.Model):
     telefone_celular = models.CharField(max_length=120, blank=True)
 
     data_cadastro = datetime.today().strftime('%d-%m-%Y')
+
+    def __str__(self):
+        return self.nome
+    

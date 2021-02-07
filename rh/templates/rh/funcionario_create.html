@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% load crispy_forms_tags %}
+<form   method="post"   enctype="multipart/form-data"> <input type="hidden">
+    {% csrf_token %}
+    {{ form|crispy }}
 
-</body>
-</html>
+    <button  type="submit" value="Save"/>Salvar</button>
+</form>
