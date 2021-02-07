@@ -8,23 +8,19 @@ from django.dispatch.dispatcher import receiver
 from django.urls import reverse
 
 class Processo(models.Model):
-    # unique_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     NATUREZA_PROCESSO = (('OSTENSIVO', 'OSTENSIVO'), ('RESTRITO', 'RESTRITO'))
-
     origem_processo = models.CharField(max_length=120)
     tipo_processo = models.CharField(max_length=120)
     assunto_detalhado = models.TextField(max_length=900)
     natureza_processo = models.CharField(max_length=120, choices=NATUREZA_PROCESSO, default=NATUREZA_PROCESSO[0][0])
     observacao = models.TextField(blank=True)
-    documentos = models.FileField(upload_to='../static/upload/pdfs/')
+    documentos = models.FileField(upload_to='../static/upload/pdfs/', blank=True)
     # imagem = models.ImageField(upload_to='../static/upload/imagens/', null=True, blank=True)
 
     # Isto serve para ver o nome 'origem_processo' no admin painel
     def __str__(self):
         return self.origem_processo
 
-    def get_absolute_url(self):
-        return f"{self.id}/"
 
 
 
@@ -41,3 +37,8 @@ def mymodel_delete(sender, instance, **kwargs):
         os.remove(os.path.join(settings.MEDIA_ROOT, self.docfile.name))
 '''
 'reverse("detalhes_processos", kwargs={"my_id": self.id})'
+
+# asdadasdaaunique_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+
+'''def get_absolute_url(self):
+    return f"{self.id}/"'''

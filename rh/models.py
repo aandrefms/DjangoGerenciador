@@ -35,6 +35,7 @@ class Funcionario(models.Model):
 
     data_cadastro = datetime.today().strftime('%d-%m-%Y')
 
+    # Retorna o 'nome' para identificação no painel admin
     def __str__(self):
         return self.nome
     
