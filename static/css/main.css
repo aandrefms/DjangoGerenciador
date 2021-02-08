@@ -1,1 +1,135 @@
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
 
+.class_test {
+    color:red;
+}
+
+
+#botaoentrar{
+    color: rgb(255, 153, 51)
+}
+.oi1 {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.oi {
+  display: inline-block;
+  padding: 8px;
+}
+
+.andre{
+    color:red;
+}
+
+.oi3 {
+  list-style-type: none;
+  text-align:center;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(240, 245, 245);
+  margin: auto;
+  }
+
+.thumbnail{
+	width: 100%;
+	height: 260px;
+}
+#ohana{
+    color: rgb(255, 153, 51);
+    display:block;
+    width:0%;
+    margin:auto;
+    font-size: 30px;
+    font-family: 'Bad Script';
+}
+
+#navbarp{
+    color: rgb(255, 153, 51);
+    display:inline-block;
+    width:0%;
+    font-size: 20px;
+    font-family: 'Amatic SC', cursive;
+    margin:auto;
+    white-space: nowrap;
+}
+
+
+#cart-icon{
+	width:25px;
+	display: inline-block;
+	margin-left: 15px;
+}
+
+#ohanaa{
+	width:200px;
+	display: inline-block;
+	margin-left: 15px;
+    margin: 0;
+    padding: 0;
+
+}
+
+.botao{
+    color: black;
+}
+
+.botao:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.principal {
+  position: relative;
+  left: 40px;
+  width: 95%;
+  height: 30%;
+  padding:0;
+  margin: 20px auto;
+  margin-left:0;
+
+}
+
+.logo{
+    position: relative;
+    left: -160px;
+}
+
+.form123{
+    top:40px;
+    left: 500px;
+    position:absolute;
+    width: 600px;
+}
+
+
+.aloha{
+    position:relative;
+    display: inline-block;
+}
+
+.searchbar1{
+    position: absolute;
+    right: 60px;
+    top: 20px;
+    width: 150px;
+}
+
+.searchbar1 input {
+     height: 50px;
+     width: 150px;
+}
+
+.login {
+    position: absolute;
+    right: -300px;
+    width: 200px;
+    color: rgb(255, 153, 51);
+    display: block;
+    font-size: 20px;
+    font-family: 'Amatic SC', cursive;
+}
