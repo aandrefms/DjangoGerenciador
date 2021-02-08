@@ -20,7 +20,7 @@ def contato_view(request, *args, **kwargs):
 
 def login_usuario_view(request):
     if request.user.is_authenticated:
-        return redirect('infra:func')
+        return redirect('paginas:home')
     else:
         if request.method == 'POST':
             username = request.POST.get('username')
@@ -29,13 +29,18 @@ def login_usuario_view(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('infra:func')
+                return redirect('paginas:home')
 
             else:
                 messages.info(request, "Usuário ou senha incorretos!")
 
         context = {}
         return render(request, 'login_usuario.html', context)
+
+
+
+def painelUsuario(request):
+    return render(request, 'painel_usuario.html', {})
 
 
 def logoutUser(request):
