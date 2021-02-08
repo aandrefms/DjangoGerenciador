@@ -1,13 +1,27 @@
 from django.db import models
 from datetime import datetime
-
+from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
+import re
 # Create your models here.
+
+# Construir uma função verificadora em algum campo
+
+
+def verify_cpf(cpf):
+    validator = '^[0-9]{3}\.[0-9]{3}\.[0-9]{3}\-[0-9]{2}$'
+    if re.match(validator, cpf) is None:
+        raise ValidationError(
+            _('%(value)s nao eh um cpf valido'),
+            params={'value': cpf},
+        )
 
 class Funcionario(models.Model):
     situacao_funcional = models.CharField(max_length=120)
 
     nome = models.CharField(max_length=120)
-    cpf = models.CharField(max_length=120)
+    cpf = models.CharField(max_length=120, validators=[verify_cpf])
+    # cpf2 = models.IntegerField(validators=[verify_cpf])
     naturalidade = models.CharField(max_length=120)
     cor = models.CharField(max_length=120)
     nome_mae = models.CharField(max_length=120)

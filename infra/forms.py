@@ -10,6 +10,7 @@ class ProcessoForm(forms.ModelForm):
         # fields = '__all__'
 
 
+
     '''origem_processo = forms.CharField(label='Origem do Processo', widget=forms.TextInput(attrs={
                                                                 'placeholder' : 'Origem do Processo'
                                                             }))

@@ -1,5 +1,5 @@
 
 {% for instance in object_list %}
-<p>{{ instance.id }} - <a   href="{{ instance.get_absolute_url }}"> {{ instance.nome }} {{ instance.cpf }}</a></p>
+<p>{{ instance.id }} - <a   href="{% url 'rh:detalhes_funcionario' instance.id %}"> {{ instance.nome }} {{ instance.cpf }}</a></p>
 <a  href="{% url 'rh:editar_funcionario' instance.id %}">Editar</a>
 {% endfor %}

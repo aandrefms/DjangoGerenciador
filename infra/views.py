@@ -44,8 +44,9 @@ def processo_detalhes(request, my_id):
 @login_required(login_url='paginas:login')
 def processo_list(request):
     queryset = Processo.objects.all()
+    # queryset = Processo.objects.filter(NATUREZA_PROCESSO='OSTENSIVO')
     context = {
-        "object_list" : queryset
+        "object_list": queryset
     }
     return render(request, "infra/processo_list.html", context)
 

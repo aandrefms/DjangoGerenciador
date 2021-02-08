@@ -34,14 +34,15 @@ def funcionario_detalhes(request, pk):
                 obj.delete()
                 return redirect('../../')"""
     context = {
-        'objeto':obj
+        'objeto': obj
     }
     return render(request, "rh/funcionario_detalhes.html", context)
 
 
 @login_required(login_url="paginas:login")
 def funcionario_list(request):
-    queryset = Funcionario.objects.all
+    queryset = Funcionario.objects.all()
+    # queryset = Funcionario.objects.filter(situacao_funcional='Ativo')
     context = {
         "object_list": queryset
     }
