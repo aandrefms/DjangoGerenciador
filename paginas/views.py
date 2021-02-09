@@ -20,7 +20,7 @@ def contato_view(request, *args, **kwargs):
 
 def login_usuario_view(request):
     if request.user.is_authenticated:
-        return redirect('paginas:home')
+        return redirect('infra:func')
     else:
         if request.method == 'POST':
             username = request.POST.get('username')

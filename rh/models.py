@@ -52,4 +52,9 @@ class Funcionario(models.Model):
     # Retorna o 'nome' para identificação no painel admin
     def __str__(self):
         return self.nome
-    
+
+class FuncionarioQuery(models.Model):
+    situacao_funcional = models.CharField(max_length=120)
+
+    def __str__(self):
+        return self.situacao_funcional

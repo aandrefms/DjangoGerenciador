@@ -1,0 +1,9 @@
+{% load crispy_forms_tags %}
+<form   method="post"   enctype="multipart/form-data"> <input type="hidden">
+    {% csrf_token %}
+    {{ form|crispy }}
+
+    <button  type="submit" value="Save"/>Salvar</button>
+</form>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>

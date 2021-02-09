@@ -4,7 +4,8 @@ from .views import (
     funcionario_view,
     funcionario_detalhes,
     funcionario_list,
-    funcionario_editar
+    funcionario_editar,
+    funcionario_detalhes_query
 )
 
 app_name = 'rh'
@@ -13,5 +14,6 @@ urlpatterns = [
     path('funcionarios/create/', funcionario_create_view, name='criar_funcionario'),
     path('funcionarios/<int:pk>/', funcionario_detalhes, name='detalhes_funcionario'),
     path('funcionarios/', funcionario_list, name='lista_funcionario'),
-    path('funcionarios/<int:pk>/editar', funcionario_editar, name='editar_funcionario')
+    path('funcionarios/<int:pk>/editar', funcionario_editar, name='editar_funcionario'),
+    path('funcionarios/search', funcionario_detalhes_query, name='procurar_funcionario')
 ]

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Funcionario
+from .models import Funcionario, FuncionarioQuery
 
 
 class FuncionarioForm(forms.ModelForm):
@@ -15,4 +15,10 @@ class FuncionarioForm(forms.ModelForm):
         widgets = {'cpf': forms.TextInput(attrs={'data-mask': "000.000.000-00"}),
                    'data_nascimento': forms.TextInput(attrs={'data-mask': "00/00/0000"}),
                    'rg': forms.TextInput(attrs={'data-mask': '000.000.000.000-0'})}
+
+
+class FuncionarioQueryForm(forms.ModelForm):
+    class Meta:
+        model = FuncionarioQuery
+        fields = '__all__'
 
