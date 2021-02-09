@@ -60,6 +60,8 @@ def processo_editar(request, pk):
         if form.is_valid():
             # now the data is good
             # print(my_form.cleaned_data)
+            b = Processo.concatPdf(file=str(form.cleaned_data['documentos']))
+            form.cleaned_data['documentos'] = b
             form.save()
             # Processo.objects.create(**my_form.cleaned_data)
             return redirect('infra:lista_processos')

@@ -2,6 +2,7 @@
 <form   method="post"   enctype="multipart/form-data"> <input type="hidden" name="csrfmiddlewaretoken" value="7uswrLpLmWMadzBTVRU3g6Pnnr076lGPv7aNOYdn2aiDnOw3A22N7xeo2DCK4p2B">
     {% csrf_token %}
     {{ form|crispy }}
+    {{ fafa|crispy }}
 
     <button  type="submit" value="Save"/>Salvar</button>
 </form>

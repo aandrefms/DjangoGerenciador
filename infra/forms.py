@@ -1,6 +1,6 @@
 from django import forms
 from .models import Processo
-
+from django.forms import ClearableFileInput
 
 class ProcessoForm(forms.ModelForm):
     class Meta:
@@ -9,18 +9,7 @@ class ProcessoForm(forms.ModelForm):
                   'documentos')  # Preciso colocar 'imagens' aqui caso eu insira o campo imagens
         # fields = '__all__'
 
+        widgets = {
+            'documentos': ClearableFileInput(attrs={'multiple': True}),
+        }
 
-
-    '''origem_processo = forms.CharField(label='Origem do Processo', widget=forms.TextInput(attrs={
-                                                                'placeholder' : 'Origem do Processo'
-                                                            }))
-    tipo_processo = forms.CharField(widget=forms.Textarea(attrs={
-        'placeholder': 'Descricao',
-        "class": "new_class_2",
-        "id": 'my-id',
-        "rows": 20,
-        "cols": 20}))
-    assunto_detalhado = forms.CharField(max_length=900)
-    natureza_processo = forms.CharField(max_length=120, initial='OSTENSIVO')
-    observacao = forms.CharField(max_length=120)
-'''

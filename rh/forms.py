@@ -1,6 +1,6 @@
 from django import forms
 from .models import Funcionario, FuncionarioQuery
-
+from django.forms import ClearableFileInput
 
 class FuncionarioForm(forms.ModelForm):
     class Meta:
@@ -15,6 +15,7 @@ class FuncionarioForm(forms.ModelForm):
         widgets = {'cpf': forms.TextInput(attrs={'data-mask': "000.000.000-00"}),
                    'data_nascimento': forms.TextInput(attrs={'data-mask': "00/00/0000"}),
                    'rg': forms.TextInput(attrs={'data-mask': '000.000.000.000-0'})}
+
 
 
 class FuncionarioQueryForm(forms.ModelForm):
