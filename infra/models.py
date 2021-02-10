@@ -27,10 +27,9 @@ class Processo(models.Model):
         return self.origem_processo
 
 
-class ProcessoDocumento(models.Model):
-    file = models.FileField(upload_to=content_file_name, blank=True)
+class Documento(models.Model):
+    file = models.FileField(upload_to='../static/upload/%Y/%m/%d/', blank=True)
     processo = models.ForeignKey(Processo, on_delete=models.CASCADE, related_name='files')
-
 
 
 
