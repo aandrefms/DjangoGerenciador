@@ -1,0 +1,8 @@
+{% load some_filters %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+{% for instance in object_list %}
+<a  href="{{ instance.file.url }}">file</a><p>{{ instance.tipo_documento }}</p>
+{% endfor %}
+
+<a  href="{{ object_list|pdf:'0' }} ">testando</a>

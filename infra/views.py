@@ -3,6 +3,7 @@ from .forms import ProcessoForm, DocumentoForm
 from .models import Processo, Documento
 from django.contrib.auth.decorators import login_required
 
+
 # Create your views here.
 @login_required(login_url='paginas:login')
 def processo_create_view(request):
@@ -29,29 +30,7 @@ def processo_create_view(request):
     return render(request, "infra/processo_create.html", context)
 
 
-@login_required(login_url='paginas:login')
-def documento_insert(request, pk):
-    queryset = Processo.objects.get(id=pk)
-    queryset = queryset.origem_processo
-    form_file = DocumentoForm()
-    if request.method == 'POST':
-        form_file = DocumentoForm(request.POST, request.FILES)
-        form_file.fields['processo'].choices = [(queryset, queryset)]
-        form_file.fields['processo'].initial = [0]
-        if form_file.is_valid():
-            form_file.save()
-            return redirect('infra:lista_processos')
-        else:
-            print(form_file.errors)
-    else:
-        form_file = DocumentoForm()
-        form_file.fields['processo'].choices = [(queryset, queryset)]
-        form_file.fields['processo'].initial = [0]
-        # form_file.fields["processo"] = 'testando'
-    context = {
-        'test':form_file
-    }
-    return render(request, "infra/documento_inserir.html", context)
+
 
 @login_required(login_url='paginas:login')
 def processo_view(request, *args, **kwargs):
@@ -88,10 +67,45 @@ def processo_editar(request, pk):
         if form.is_valid():
             # now the data is good
             # print(my_form.cleaned_data)
-            b = Processo.concatPdf(file=str(form.cleaned_data['documentos']))
-            form.cleaned_data['documentos'] = b
+            '''b = Processo.concatPdf(file=str(form.cleaned_data['documentos']))
+            form.cleaned_data['documentos'] = b'''
             form.save()
             # Processo.objects.create(**my_form.cleaned_data)
             return redirect('infra:lista_processos')
     context = {'form':form}
     return render (request, "infra/processo_editar.html", context)
+
+@login_required(login_url='paginas:login')
+def documento_insert(request, pk):
+    queryset = Processo.objects.get(id=pk)
+    queryset = queryset.id
+    if request.method == 'POST':
+        form_file = DocumentoForm(request.POST, request.FILES)
+        form_file.fields['processo'].choices = [(queryset, queryset)]
+        form_file.fields['processo'].initial = [0]
+        if form_file.is_valid():
+            form_file.save()
+            return redirect('infra:lista_processos')
+        else:
+            print(form_file.errors)
+    else:
+        form_file = DocumentoForm()
+        form_file.fields['processo'].choices = [(queryset, queryset)]
+        form_file.fields['processo'].initial = [0]
+        # form_file.fields["processo"] = 'testando'
+    context = {
+        'test':form_file
+    }
+    return render(request, "infra/documento_inserir.html", context)
+
+@login_required(login_url='paginas:login')
+def documento_list(request, pk):
+    querydoc = Processo.objects.get(id=pk)
+    querydoc = querydoc.processo.all()
+    context = {
+        "object_list": querydoc
+    }
+    return render(request, "infra/documento_list.html", context)
+
+
+

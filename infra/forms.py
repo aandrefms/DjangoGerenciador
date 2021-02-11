@@ -20,5 +20,5 @@ class DocumentoForm(forms.ModelForm):
         fields = '__all__'
 
         widgets = {
-            'file': ClearableFileInput(attrs={'multiple': True}),
+            'file': ClearableFileInput(attrs={'multiple': True})
         }

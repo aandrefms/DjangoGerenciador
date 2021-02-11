@@ -13,6 +13,7 @@ def content_file_name(instance, filename):
 
 class Processo(models.Model):
     NATUREZA_PROCESSO = (('OSTENSIVO', 'OSTENSIVO'), ('RESTRITO', 'RESTRITO'))
+    unique_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     origem_processo = models.CharField(max_length=120)
     tipo_processo = models.CharField(max_length=120)
     assunto_detalhado = models.TextField(max_length=900)
@@ -28,8 +29,10 @@ class Processo(models.Model):
 
 
 class Documento(models.Model):
+    tipo_documento = models.CharField(max_length=120)
+    unique_documento_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     file = models.FileField(upload_to='../static/upload/%Y/%m/%d/', blank=True)
-    processo = models.ForeignKey(Processo, on_delete=models.CASCADE, related_name='files')
+    processo = models.ForeignKey(Processo, on_delete=models.CASCADE, related_name='processo')
 
 
 
