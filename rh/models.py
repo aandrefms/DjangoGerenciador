@@ -1,21 +1,10 @@
 from django.db import models
 from datetime import datetime
-from django.core.exceptions import ValidationError
-from django.utils.translation import gettext_lazy as _
 import re
+from .validators import *
+
+
 # Create your models here.
-
-# Construir uma função verificadora em algum campo
-
-
-def verify_cpf(cpf):
-    validator = '^[0-9]{3}\.[0-9]{3}\.[0-9]{3}\-[0-9]{2}$'
-    if re.match(validator, cpf) is None:
-        raise ValidationError(
-            _('%(value)s nao eh um cpf valido'),
-            params={'value': cpf},
-        )
-
 class Funcionario(models.Model):
     situacao_funcional = models.CharField(max_length=120)
 
@@ -29,8 +18,9 @@ class Funcionario(models.Model):
     # matricula_siape = models.CharField(max_length=120)
     data_nascimento = models.CharField(max_length=120)
 
-    foto_3x4 = models.ImageField(upload_to='../static/upload/fotos3x4/')
-    comprovante_residencia = models.FileField(upload_to='../static/upload/comprovantesResidencia/')
+    foto_3x4 = models.ImageField(upload_to='../static/upload/fotos3x4/', validators=[validate_foto])
+    comprovante_residencia = models.FileField(upload_to='../static/upload/comprovantesResidencia/',
+                                              validators=[validate_comprovante])
 
     rg = models.CharField(max_length=120)
     orgao_emissor = models.CharField(max_length=120)

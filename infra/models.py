@@ -3,8 +3,15 @@ import uuid
 import os
 from django.db.models.signals import pre_delete, post_delete
 from django.dispatch.dispatcher import receiver
+from django.core.exceptions import ValidationError
 
 
+
+def validate_pdf(value):
+    ext = os.path.splitext(value.name)[1]  # [0] returns path+filename
+    valid_extensions = ['.pdf']
+    if not ext.lower() in valid_extensions:
+        raise ValidationError('Unsupported file extension.')
 
 from django.urls import reverse
 def content_file_name(instance, filename):
@@ -32,7 +39,8 @@ class Documento(models.Model):
     tipo_documento = models.CharField(max_length=120)
     unique_documento_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     file = models.FileField(upload_to='../static/upload/%Y/%m/%d/', blank=True)
-    processo = models.ForeignKey(Processo, on_delete=models.CASCADE, related_name='processo')
+    processo = models.ForeignKey(Processo, on_delete=models.CASCADE, related_name='processo',
+                                 validators=[validate_pdf])
 
 
 
