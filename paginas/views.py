@@ -40,7 +40,7 @@ def login_usuario_view(request):
 
 
 def painelUsuario(request):
-    return render(request, 'painel_usuario.html', {})
+    return render(request, 'teste.html', {})
 
 
 def logoutUser(request):
