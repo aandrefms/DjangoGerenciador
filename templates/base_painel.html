@@ -15,17 +15,21 @@
 <style>
 .fundo{
 	background-color:white;
+	margin-left:80px;
 	}
 
 .border-nav1 {
     border-bottom: 4px solid #79aec8;
     border-radius:5px;
+    width:85%;
+    margin-left:25px;
 }
 
 .border-header {
     border: 3px solid #79aec8;
     border-radius:5px;
     background-color:white;
+
 
 }
 
@@ -68,7 +72,7 @@
 	}
 
 #container-edit {
-	background-color:f2f2f2;
+	background-color:white;
 	height:400px;
 	border:0px;
 	width:1110px;
@@ -77,7 +81,9 @@
 .link-padrao {
     text-decoration: none;
     color:#004080;
-    margin-right:10px;
+    font-size:14px;
+    margin-left:10px;
+
     }
 
 .link-padrao2 {
@@ -117,15 +123,40 @@ a.destaque:hover {
     background-color:#f6f6c3;
     margin-top:10px;
     border-radius:5px;
+    width:88%;
+    margin-left:8px;
+
 }
+
 
 .infor {
     font-size:13px;
     color:#818181;
+    width:366px;
+    padding:13px;
 }
 .imagens {
     margin-bottom:3px;
 }
+
+@media screen and (max-width: 1026px) {
+    #painelfoto {
+
+      margin-left:auto;
+      margin-right:auto;
+      margin-top:15px;
+    }
+}
+
+@media screen and (max-width: 1026px) {
+    #painelusuario {
+
+      margin-left:auto;
+      margin-right:auto;
+
+    }
+}
+
 
 
 </style>
@@ -135,9 +166,9 @@ a.destaque:hover {
 
 <!-- HEADER -->
 
-<div class="fundo">
+<div class="fundo"  >
     <div class="container mt-2 mb-2">
-        <nav class="navbar navbar-light border-nav1" style="background-color: #064a89;">
+        <nav class="navbar navbar-light border-nav1" style="background-color: #4682B4;">
             <div class="container-fluid">
                 <h5 class="letra-padrao1 mt-2"> Prefeitura municipal de Santa Inês</h5>
                 <a href="#" class="link-padrao" style="color:white; margin-top:5px; margin-left 5px;">
@@ -148,8 +179,8 @@ a.destaque:hover {
     </div>
     <div class="container mt-0 mb-2">
         <nav class="navbar navbar-light border-nav1" style="background-color: #e3f2fd;">
-            <div class="container-fluid">
-                <h5 class="letra-padrao2 mt-2">Matheus Maciel Bastos</h5> <br>
+            <div class="container">
+                <h5 class="letra-padrao2 mt-2">Matheus Maciel Bastos </h5> <br>
                 <h5 class="letra-padrao2 mt-2">Cargo da pessoa</h5>
             </div>
         </nav>
@@ -159,75 +190,78 @@ a.destaque:hover {
 
 
 
+
 <!-- HEADER -->
     <!-- SLIDER -->
 
     <div id="container-edit" class="container">
-        <div class="row">
-            <div class="painel">
-                Painel do usuário
-            </div>
-            <div class="painel2" style="margin-left:440px;">
-                Informações
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-7 border-header" style="margin-right:91px;" >
-                <div class="container overflow-hidden">
-                    <div class="row gy-5" >
+        <div  style="display:inline;margin-bottom:0;">
+            <div class="row" >
+                <div id="painelusuario" class=" ml-4 mr-3 col-xs-10 col-sm-8 col-md-8 col-xl-6  border-header" style="margin-right:91px; width:200px;">
+                    <div class="container">
+                        <div class="row gy-5">
 
-        {% block content %} {% endblock %}
+                            {% block content %} {% endblock %}
+                        </div>
                     </div>
                 </div>
-            </div>
 
-<div class="col-4 pt-3 pr-0 border-header" >
-                <div style="margin-right:25px;">
-                <img src="images/anonimo.jpeg" class="rounded float-end img-fluid" style=" float:right; width:140px; height:160px;">
+                <div id="painelfoto"  class=" col-md-4 col-xl-4 align-self-center pt-3 pr-0 border-header">
+                    <div class="container " >
+                        <img src="images/anonimo.jpeg" class="rounded float-end img-fluid"
+                             style=" float:left; width:135px; height:155px;">
+                    </div>
+                    <div class="container">
+                        <div style="margin-bottom:2px;">
+                            <a href="#" class="link-padrao" >Saiba Mais</a>
+                        </div> <br>
+                        <div style="margim-bottom:10px;">
+                            <a href="#" class="link-padrao">Atualizar foto de perfil</a>
+                        </div> <br>
+                        <div>
+                            <a href="#" class="link-padrao">Meus dados pessoais</a>
+                        </div>
+                    </div>
+                    <div class="row infor container">
+                        Email: matheusmaaciel2007@gmail.com <br>
+                        Status: Ativo <br>
+                        Número de inscrição: 201603669
+                    </div>
+
                 </div>
-                <div class="container" >
-                    <a href="#" class="link-padrao" style="float:right; margin-bottom:42px;">Saiba mais</a> <br>
-                    <a href="#" class="link-padrao" style="float:right; margin-bottom:44px;">Atualizar foto de perfil</a>
-                    <a href="#" class="link-padrao" style="float:right;">Meus dados pessoais</a>
-                </div>
-                <div class="row infor" style="width:366px; padding:13px;" >
-                   Email: matheusmaaciel2007@gmail.com <br>
-                   Status: Ativo <br>
-                   Número de inscrição: 201603669
-                </div>
+
+            </div>
+            <div class="row faixa">
+                <a href="#" style="color:black; font-size:15px;margin-left:10px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                         class="bi bi-mailbox imagens" viewBox="0 0 16 16">
+                        <path d="M4 4a3 3 0 0 0-3 3v6h6V7a3 3 0 0 0-3-3zm0-1h8a4 4 0 0 1 4 4v6a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a4 4 0 0 1 4-4zm2.646 1A3.99 3.99 0 0 1 8 7v6h7V7a3 3 0 0 0-3-3H6.646z"/>
+                        <path d="M11.793 8.5H9v-1h5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.354-.146l-.853-.854zM5 7c0 .552-.448 0-1 0s-1 .552-1 0a1 1 0 0 1 2 0z"/>
+                    </svg>
+                    Caixa postal
+                </a>
+                <a href="#" style="color:black; font-size:15px;margin-left:25px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                         class="bi bi-key imagens"
+                         viewBox="0 0 16 16">
+                        <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z"/>
+                        <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                    </svg>
+                    Alterar senha
+                </a>
+                <a href="#" style="color:black; font-size:15px;margin-left:25px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                         class="bi bi-exclamation-circle imagens" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                    </svg>
+                    Ajuda
+                </a>
+
 
             </div>
 
         </div>
-        <div class="row faixa">
-            <a href="#" style="color:black; font-size:15px;margin-left:10px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-mailbox imagens" viewBox="0 0 16 16">
-                    <path d="M4 4a3 3 0 0 0-3 3v6h6V7a3 3 0 0 0-3-3zm0-1h8a4 4 0 0 1 4 4v6a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a4 4 0 0 1 4-4zm2.646 1A3.99 3.99 0 0 1 8 7v6h7V7a3 3 0 0 0-3-3H6.646z"/>
-                    <path d="M11.793 8.5H9v-1h5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.354-.146l-.853-.854zM5 7c0 .552-.448 0-1 0s-1 .552-1 0a1 1 0 0 1 2 0z"/>
-                </svg>
-                Caixa postal
-            </a>
-            <a href="#" style="color:black; font-size:15px;margin-left:25px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-key imagens"
-                     viewBox="0 0 16 16">
-                    <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z"/>
-                    <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-                </svg>
-                Alterar senha
-            </a>
-            <a href="#" style="color:black; font-size:15px;margin-left:25px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
-                     class="bi bi-exclamation-circle imagens" viewBox="0 0 16 16">
-                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                    <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-                </svg>
-                Ajuda
-            </a>
 
-
-        </div>
     </div>
-
-
-    <!-- SLIDER -->
 </div>
