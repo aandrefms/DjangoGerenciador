@@ -5,6 +5,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Site avançado" />
+    <orderEntry type="module" module-name="Curso Bootstrap" />
+    <orderEntry type="module" module-name="Nova pasta" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
