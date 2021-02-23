@@ -64,3 +64,12 @@ def criar_funcionario_view(request):
             'form': form
         }
         return render(request, 'criar_usuario.html', context)
+
+
+
+def menuFuncionario(request):
+    return render(request, 'menu_rh.html', {})
+
+
+def menuProcesso(request):
+    return render(request, 'menu_processo.html', {})
