@@ -4,8 +4,13 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../../Curso Bootstrap/.idea/Curso Bootstrap.iml" filepath="$PROJECT_DIR$/../../Curso Bootstrap/.idea/Curso Bootstrap.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/DjangoGerenciador.iml" filepath="$PROJECT_DIR$/.idea/DjangoGerenciador.iml" />
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/../../Nova pasta/.idea/Nova pasta.iml" filepath="$PROJECT_DIR$/../../Nova pasta/.idea/Nova pasta.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/../../Projeto JavaScript/.idea/Projeto JavaScript.iml" filepath="$PROJECT_DIR$/../../Projeto JavaScript/.idea/Projeto JavaScript.iml" />
+>>>>>>> origin/matheusTrabalho
       <module fileurl="file://$PROJECT_DIR$/../../Site avançado/.idea/Site avançado.iml" filepath="$PROJECT_DIR$/../../Site avançado/.idea/Site avançado.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../htlmcheatsheet/.idea/htlmcheatsheet.iml" filepath="$PROJECT_DIR$/../../htlmcheatsheet/.idea/htlmcheatsheet.iml" />
     </modules>
   </component>
 </project>

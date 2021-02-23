@@ -5,13 +5,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Site avançado" />
-<<<<<<< HEAD
     <orderEntry type="module" module-name="Curso Bootstrap" />
     <orderEntry type="module" module-name="Nova pasta" />
-=======
-    <orderEntry type="module" module-name="Projeto JavaScript" />
-    <orderEntry type="module" module-name="htlmcheatsheet" />
->>>>>>> origin/matheusTrabalho
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
