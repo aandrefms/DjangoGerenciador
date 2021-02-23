@@ -20,8 +20,9 @@ def content_file_name(instance, filename):
 
 class Processo(models.Model):
     NATUREZA_PROCESSO = (('OSTENSIVO', 'OSTENSIVO'), ('RESTRITO', 'RESTRITO'))
+    TIPO_PROCESSO = (())
     unique_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
-    origem_processo = models.CharField(max_length=120)
+    origem_processo = models.CharField(max_length=120, choices=TIPO_PROCESSO)
     tipo_processo = models.CharField(max_length=120)
     assunto_detalhado = models.TextField(max_length=900)
     natureza_processo = models.CharField(max_length=120, choices=NATUREZA_PROCESSO, default=NATUREZA_PROCESSO[0][0])
