@@ -5,7 +5,7 @@ from django.db.models.signals import pre_delete, post_delete
 from django.dispatch.dispatcher import receiver
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
-
+from .choices import *
 
 def validate_pdf(value):
     ext = os.path.splitext(value.name)[1]  # [0] returns path+filename
@@ -13,17 +13,16 @@ def validate_pdf(value):
     if not ext.lower() in valid_extensions:
         raise ValidationError('Por favor, insira um arquivo com  extensão pdf')
 
+
 from django.urls import reverse
 def content_file_name(instance, filename):
     return "../static/upload/pdfs/{folder}/{file}".format(id=instance, folder='2', file=filename)
 
 
 class Processo(models.Model):
-    NATUREZA_PROCESSO = (('OSTENSIVO', 'OSTENSIVO'), ('RESTRITO', 'RESTRITO'))
-    TIPO_PROCESSO = (())
     unique_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
-    origem_processo = models.CharField(max_length=120, choices=TIPO_PROCESSO)
-    tipo_processo = models.CharField(max_length=120)
+    origem_processo = models.CharField(max_length=120)
+    tipo_processo = models.CharField(max_length=120, choices=TIPO_PROCESSO)
     assunto_detalhado = models.TextField(max_length=900)
     natureza_processo = models.CharField(max_length=120, choices=NATUREZA_PROCESSO, default=NATUREZA_PROCESSO[0][0])
     observacao = models.TextField(blank=True)
