@@ -6,12 +6,21 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Site avançado" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <orderEntry type="module" module-name="Curso Bootstrap" />
     <orderEntry type="module" module-name="Nova pasta" />
 =======
     <orderEntry type="module" module-name="Projeto JavaScript" />
     <orderEntry type="module" module-name="htlmcheatsheet" />
 >>>>>>> origin/matheusTrabalho
+=======
+    <orderEntry type="module" module-name="Projeto JavaScript" />
+    <orderEntry type="module" module-name="htlmcheatsheet" />
+=======
+    <orderEntry type="module" module-name="Curso Bootstrap" />
+    <orderEntry type="module" module-name="Nova pasta" />
+>>>>>>> origin/main
+>>>>>>> matheusTrabalho
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
