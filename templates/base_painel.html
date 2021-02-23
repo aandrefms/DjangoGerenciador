@@ -6,6 +6,8 @@
      <link rel="preconnect" href="https://fonts.gstatic.com">
     <meta   name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
     <title>Painel do usuário</title>
 
 </head>
@@ -29,9 +31,10 @@
 }
 
 .letra-padrao1{
-	font-family:Arial;
+	font-family:'Roboto', sans-serif;
 	color:white;
-	text-align:center;
+	font-size:18px;
+	margin-bottom:5px;
 	}
 
 
@@ -72,6 +75,15 @@
 	 margin-bottom:0
 	}
 
+.titulos {
+     color:#0A747C;
+     margin-top:10px;
+     font-family:'Roboto', sans-serif;
+     font-size:19px;
+     padding:4px;
+
+}
+
 #container-edit {
 	background-color:#f8f8f8;
 	height:400px;
@@ -79,6 +91,8 @@
 	width:72%;
 
 	}
+
+
 
 .link-padrao {
     text-decoration: none;
@@ -96,9 +110,9 @@
 }
 .link-padrao3 {
     text-decoration: none;
-    color:#565656;
+    color:white;
     margin-right:7px;
-    font-size:14px;
+    padding-top:5px;
     color:white;
     margin-top:5px;
     margin-left 5px;
@@ -113,22 +127,48 @@
     float:right;
 }
 
+
+
+
+
 a:link {
      text-align:center;
      font-family: 'Roboto', sans-serif;
      color:#565656;
 }
+
 a:hover {
     color:black;
     text-decoration:none;
     transform: scale(1.05);
 }
 
+.link-titulos {
+    text-decoration:none;
+    color:#0A747C;
+    margin-left:10px;
+
+
+}
+
+a.link-titulos:hover {
+       color:#0A747C;
+}
+
+
+dd:hover {
+    color:#0A747C;
+    transform: scale(1.05);
+}
+
+
+
+
 .destaque {
     display: block;
     background:#0A747C;
     border-radius: 5px;
-    padding:11px;
+    padding:8px;
     text-align: center;
     color: white;
     text-decoration: none;
@@ -136,7 +176,6 @@ a:hover {
 }
 
 a.destaque:hover {
-    background:
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.12);
     transform: scale(1.05);
 }
@@ -206,8 +245,8 @@ a.destaque:hover {
         <nav class="navbar navbar-light border-nav1" style="background-color: #0A747C;">
             <div class="container-fluid">
                 <h9 class="letra-padrao1 mt-2"> Prefeitura municipal de Santa Inês</h9>
-                <a href="#" class="link-padrao3" style="">
-                    <h5 style="font-size:18px;">Sair</h5>
+                <a href="#" class="link-padrao3" >
+                    <h5 style="font-size:17px;">Sair</h5>
                 </a>
             </div>
         </nav>
@@ -259,12 +298,11 @@ a.destaque:hover {
         </div>
         <div class="row justify-content-around">
             <div class=" col-7 border-header" style="margin-top:0px; margin-right:15px;" >
-                <div class="container overflow-hidden">
-                    <div class="row gy-5"  >
+
 
         {% block content %} {% endblock %}
-                    </div>
-                </div>
+
+
             </div>
 
         <div id="painelfoto" class=" col-4  pt-3 pr-0 border-header" style="background-color:#e3f2fd;">
