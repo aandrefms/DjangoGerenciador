@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .forms import CriarUsuarioForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -38,14 +39,16 @@ def login_usuario_view(request):
         return render(request, 'login_usuario.html', context)
 
 
-
+@login_required(login_url='paginas:login')
 def painelUsuario(request):
     return render(request, 'painel_usuario.html', {})
 
 
+@login_required(login_url='paginas:login')
 def logoutUser(request):
     logout(request)
     return redirect('paginas:home')
+
 
 def criar_funcionario_view(request):
     if request.user.is_authenticated:
@@ -66,10 +69,11 @@ def criar_funcionario_view(request):
         return render(request, 'criar_usuario.html', context)
 
 
-
+@login_required(login_url='paginas:login')
 def menuFuncionario(request):
     return render(request, 'menu_rh.html', {})
 
 
+@login_required(login_url='paginas:login')
 def menuProcesso(request):
     return render(request, 'menu_processo.html', {})
