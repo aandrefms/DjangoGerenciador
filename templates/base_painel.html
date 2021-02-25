@@ -16,6 +16,8 @@
     <!-- STYLES -->
 <style>
 
+/* NAVS */
+
 .border-nav1 {
     border-bottom: 4px solid #79aec8;
     border-radius:5px;
@@ -29,6 +31,8 @@
     background-color:#e3f2fd;
 
 }
+
+
 
 .letra-padrao1{
 	font-family:'Roboto', sans-serif;
@@ -76,11 +80,13 @@
 	}
 
 .titulos {
-     color:#0A747C;
-     margin-top:10px;
+     color:	#565656;
      font-family:'Roboto', sans-serif;
-     font-size:19px;
+     font-size:22px;
      padding:4px;
+     margin:auto;
+     margin-top:10px;
+     margin-bottom:5px;
 
 }
 
@@ -92,6 +98,8 @@
 
 	}
 
+
+                   /* EDIÇÕES DE LINKS */
 
 .link-padrao {
     text-decoration: none;
@@ -142,7 +150,7 @@ a:hover {
 
 .link-titulos {
     text-decoration:none;
-    color:#0A747C;
+    color:#565656;
     margin-left:10px;
 
 
@@ -198,6 +206,10 @@ a.destaque:hover {
     height:150px;
 }
 
+
+                    /* MEDIAS SCREENS */
+
+
 @media screen and (max-width:1200px) {
     #bloco1 {
            display:block;
@@ -231,12 +243,15 @@ a.destaque:hover {
 }
 
 
+
+
 </style>
 
 
 <!-- STYLES -->
 
 <!-- HEADER -->
+
 <body   style="background-color:f8f8f8;">
 <div class="">
     <div class="container mt-2 mb-2">
@@ -280,9 +295,10 @@ a.destaque:hover {
 
 
 
-
-
 <!-- HEADER -->
+
+
+
     <!-- SLIDER -->
 
     <div id="container-edit" class="container" style="width:70%;">
@@ -297,15 +313,16 @@ a.destaque:hover {
         <div class="row justify-content-around">
             <div class=" col-7 border-header" style="margin-top:0px; margin-right:15px;" >
 
-
         {% block content %} {% endblock %}
-
 
             </div>
 
+
+            <!-- PAINEL COM FOTO! -->
+
         <div id="painelfoto" class=" col-4  pt-3 pr-0 border-header" style="background-color:#e3f2fd;">
                 <div style="margin-right:15px;">
-                    <img src="images/anonimo.jpeg" class="foto float-end img-fluid" style=" ">
+                    <img src="{% static  'images/contato.png' %}" class="foto float-end img-fluid" style=" ">
                 </div>
                 <div id="bloco1"  >
                     <a href="#" class="link-padrao"  >Saiba mais</a> <br>
@@ -320,7 +337,14 @@ a.destaque:hover {
 
             </div>
 
+            <!-- PAINEL COM FOTO! -->
+
+
+
         </div>
+
+        <!-- FAIXA FINAL  -->
+
         <div class="row faixa">
             <a href="#" style="color:black; font-size:15px;margin-left:10px;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-mailbox imagens" viewBox="0 0 16 16">
@@ -348,6 +372,9 @@ a.destaque:hover {
 
 
         </div>
+
+         <!-- FAIXA FINAL  -->
+
     </div>
 
 </div>
