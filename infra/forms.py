@@ -9,6 +9,13 @@ class ProcessoForm(forms.ModelForm):
                   'observacao', 'responsavel')  # Preciso colocar 'imagens' aqui caso eu insira o campo imagens
         # fields = '__all__'
 
+        widgets = {'assunto_detalhado': forms.Textarea(attrs={'rows': 10,
+                                                   'cols': 40,
+                                                   'style': 'resize:none;'}),
+                   'observacao': forms.Textarea(attrs={'rows': 10,
+                                                              'cols': 40,
+                                                              'style': 'resize:none;'}),
+                   }
         '''widgets = {
             'documentos': ClearableFileInput(attrs={'multiple': True}),
         }

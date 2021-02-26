@@ -20,12 +20,13 @@ def content_file_name(instance, filename):
 
 
 class Processo(models.Model):
+
     unique_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     origem_processo = models.CharField(max_length=120)
     tipo_processo = models.CharField(max_length=120, choices=TIPO_PROCESSO)
-    assunto_detalhado = models.TextField(max_length=900)
+    assunto_detalhado = models.CharField(max_length=900)
     natureza_processo = models.CharField(max_length=120, choices=NATUREZA_PROCESSO, default=NATUREZA_PROCESSO[0][0])
-    observacao = models.TextField(blank=True)
+    observacao = models.CharField(max_length=900, blank=True)
     # documentos = models.FileField(upload_to='../static/upload/pdfs/', blank=True)
     # documentos = models.FileField(upload_to=content_file_name, blank=True)
     # imagem = models.ImageField(upload_to='../static/upload/imagens/', null=True, blank=True)
