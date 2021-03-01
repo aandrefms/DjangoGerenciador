@@ -1,9 +1,59 @@
+{% extends 'base_create_form.html' %}
+{% load static %}
+{% block content %}
 
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+<div class="row" >
+    <div class="col-3 titulos2" style="background-color:#4682B4;border:solid 1px;border-radius:5px;">
+        Processo
+    </div>
+    <div class="col-7 titulos2" style="background-color:#4682B4;border:solid 1px;border-radius:5px;">
+        Documento
+    </div>
+    <div class="col-2 titulos2" style="background-color:#4682B4;border:solid 1px;border-radius:5px;">
+        Atalhos
+    </div>
+
+</div>
 {% for instance in object_list %}
-<p>{{ instance.id }} - <a   href="{% url 'infra:detalhes_processos' instance.id %}"> {{ instance.origem_processo }} {{ instance.tipo_processo }}</a></p>
-<a  href="{% url 'infra:inserir_documento' instance.id %}">Inserir Documento</a>
-<a  href="{% url 'infra:editar_processo' instance.id %}">Editar</a>
-<a  href="{% url 'infra:lista_documentos' instance.id %}">Ver Todos os documentos do processo</a>
+
+<div class="row" style="margin-bottom:5px;margin-top:5px;  ">
+    <div class="col-3" style="border-right:solid 1px #DCDCDC;" >
+        <div style="margin-top:10%; height:70%">
+            <p >{{ instance.id }} - <a  class="linklist2" href="{% url 'infra:detalhes_processos' instance.id %}"> {{ instance.origem_processo }} {{ instance.tipo_processo }}</a></p>
+        </div>
+    </div>
+    <div class="col-3" style="border-right:solid 1px #DCDCDC;" >
+        <div style="">
+            <a  href="{% url 'infra:inserir_documento' instance.id %}" class="linklist" >Inserir Documento</a>
+        </div>
+        <br>
+        <div>
+            <a  href="{% url 'infra:editar_processo' instance.id %} " class="linklist" >Editar Documento</a>
+        </div>
+    </div>
+    <div class="col-4" style="border-right:solid 1px #DCDCDC;" >
+        <a  href="{% url 'infra:lista_documentos' instance.id %}" class="linklist">Ver Todos os documentos do processo</a>
+    </div>
+    <div class="col-2" >
+        <a href="#" class="linklist2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" style="margin-right:7px;margin-top:25%;" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+        </a>
+        <a href="#" class="linklist2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" style="margin-right:7px;margin-top:25%;" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+            <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+            </svg>
+        </a>
+        <a href="#" class="linklist2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" style="margin-top:25%;" fill="currentColor" class="bi bi-scissors" viewBox="0 0 16 16">
+            <path d="M3.5 3.5c-.614-.884-.074-1.962.858-2.5L8 7.226 11.642 1c.932.538 1.472 1.616.858 2.5L8.81 8.61l1.556 2.661a2.5 2.5 0 1 1-.794.637L8 9.73l-1.572 2.177a2.5 2.5 0 1 1-.794-.637L7.19 8.61 3.5 3.5zm2.5 10a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0zm7 0a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/>
+            </svg>
+        </a>
+    </div>
+</div>
+<hr>
 {% endfor %}
+{% endblock %}
