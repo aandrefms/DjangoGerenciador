@@ -16,18 +16,18 @@
   {{ form.non_field_errors }}
     <div class="formulario"  >
     {{ form.origem_processo.errors }}
-    {{ form.origem_processo.label_tag }}
-    {{ form.origem_processo }}
+    <label>Origem do processo:</label>
+    <input class="inputform">
     </div>
     <div class="formulario">
     {{ form.tipo_processo.errors }}
-    {{ form.tipo_processo.label_tag }}
-    {{ form.tipo_processo }}
+    <label>Tipo do processo:</label>
+     {{ form.tipo_processo }}
     </div>
     <div class="formulario">
-     {{ form.assunto_detalhado.errors }}
-        <p  style="margin-bottom:5px;">Assunto detalhado:</p>
-    {{ form.assunto_detalhado }}
+     {{ form.assunto_detalhado.errors }}  
+    {{ form.assunto_detalhado.label_tag }}
+    <textarea class="inputtextarea"></textarea>
     </div>
     <div class="formulario">
      {{ form.natureza_processo.errors }}
@@ -36,8 +36,8 @@
     </div>
     <div class="formulario">
      {{ form.observacao.errors }}
-    {{ form.observacao.label_tag }}
-    {{ form.observacao }}
+    <label>Observação:</label>
+    <textarea class="inputtextarea"></textarea>
     </div>
     <div class="formulario">
       {{ form.responsavel.errors }}
@@ -45,7 +45,7 @@
     {{ form.responsavel }}
     <span class="helptext">{{ form.subject.help_text }}</span>
   </div>
-    <button  type="submit" style="float:right; margin-bottom:10px;" value="Save"/>Salvar</button>
+    <button  type="submit" class="buttonform" style="float:right; margin-bottom:10px;" value="Save"/>Salvar</button>
 </form>
 
 {% endblock %}
