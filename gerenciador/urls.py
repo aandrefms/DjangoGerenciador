@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include(('paginas.urls', 'paginas'), namespace='paginas')),
     path('infra/', include(('infra.urls', 'infra'), namespace='infra')),
     path('rh/', include(('rh.urls', 'rh'), namespace='rh')),
+    path('solicitacoes/', include(('solicitacoes.urls', 'solicitacoes'), namespace='solicitacoes'))
 ]

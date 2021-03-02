@@ -21,7 +21,6 @@ class Funcionario(models.Model):
     foto_3x4 = models.ImageField(upload_to='../static/upload/fotos3x4/', validators=[validate_foto])
     comprovante_residencia = models.FileField(upload_to='../static/upload/comprovantesResidencia/',
                                               validators=[validate_comprovante])
-
     rg = models.CharField(max_length=120)
     orgao_emissor = models.CharField(max_length=120)
     uf_rg = models.CharField(max_length=120)
