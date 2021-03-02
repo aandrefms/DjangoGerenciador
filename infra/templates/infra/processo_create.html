@@ -12,12 +12,13 @@
         <h2 class="titulos">Cadastrar processo</h2>
         <p class="paragrafo" >Preencha as informações abaixo para cadastrar o seu processo em nosso banco de dados.</p>
         <hr margin="10">
-<form action="/contact/" method="post">
+<form method="post">
+    {% csrf_token %}
   {{ form.non_field_errors }}
     <div class="formulario"  >
     {{ form.origem_processo.errors }}
     <label>Origem do processo:</label>
-    <input class="inputform">
+    <input  name="origem_processo" class="inputform">
     </div>
     <div class="formulario">
     {{ form.tipo_processo.errors }}
@@ -27,7 +28,7 @@
     <div class="formulario">
      {{ form.assunto_detalhado.errors }}  
     {{ form.assunto_detalhado.label_tag }}
-    <textarea class="inputtextarea"></textarea>
+    <textarea   name="assunto_detalhado" class="inputtextarea"></textarea>
     </div>
     <div class="formulario">
      {{ form.natureza_processo.errors }}
@@ -37,7 +38,7 @@
     <div class="formulario">
      {{ form.observacao.errors }}
     <label>Observação:</label>
-    <textarea class="inputtextarea"></textarea>
+    <textarea   name="observacao" class="inputtextarea"></textarea>
     </div>
     <div class="formulario">
       {{ form.responsavel.errors }}
