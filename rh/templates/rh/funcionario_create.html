@@ -1,9 +1,195 @@
+{% extends 'base_create_form.html' %}
+{% load static %}
+{% block content %}
 {% load crispy_forms_tags %}
 <form   method="post"   enctype="multipart/form-data"> <input type="hidden">
     {% csrf_token %}
-    {{ form|crispy }}
 
-    <button  type="submit" value="Save"/>Salvar</button>
+    <p class="tituloform">Dados pessoais:</p>
+
+    <div class="formulario">
+        {{ form.situacao_funcional.errors }}
+        {{ form.situacao_funcional.label_tag }}
+        <input name="situacao_funcional" class="inputform">
+    </div>
+    <div class="formulario row ">
+        <div class="col-6 ">
+            <div class="ajusteform">
+                {{ form.nome.errors }}
+                {{ form.nome.label_tag }}
+                <input name="nome" class="inputform">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="ajusteform">
+                {{ form.data_nascimento.errors }}
+                {{ form.data_nascimento.label_tag }}
+                <input name="data_nascimento" class="inputform">
+            </div>
+        </div>
+    </div>
+    <div class="formulario row">
+        <div class="col-6">
+            <div class="ajusteform">
+                {{ form.telefone_residencial.errors }}
+                <label>Tel. Residencial:</label>
+                <input name="telefone_residencial" class="inputform">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="ajusteform">
+                {{ form.telefone_celular.errors }}
+                <label>Tel. Celular:</label>
+                <input name="telefone_celular" class="inputform">
+            </div>
+        </div>
+    </div>
+    <div class="formulario row">
+        <div class="col-6">
+            <div class="ajusteform">
+                {{ form.cpf.errors }}
+                {{ form.cpf.label_tag }}
+                <input name="cpf" class="inputform">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="ajusteform">
+                {{ form.rg.errors }}
+                {{ form.rg.label_tag }}
+                <input name="rg" class="inputform">
+            </div>
+        </div>
+    </div>
+    <div class="formulario row">
+        <div class="col-6">
+            <div class="ajusteform">
+                {{ form.naturalidade.errors }}
+                {{ form.naturalidade.label_tag }}
+                <input name="naturalidade" class="inputform">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="ajusteform">
+                {{ form.cor.errors }}
+                {{ form.cor.label_tag }}
+                <input name="cor" class="inputform">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="formulario row">
+        <div class="col-6">
+            <div class="ajusteform">
+                {{ form.orgao_emissor.errors }}
+                {{ form.orgao_emissor.label_tag }}
+                <input name="orgao_emissor" class="inputform">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="ajusteform">
+                {{ form.data_emissao_rg.errors }}
+                {{ form.data_emissao_rg.label_tag }}
+                <input name="data_emissao" class="inputform">
+            </div>
+        </div>
+    </div>
+    <div class="formulario row">
+        <div class="col-6">
+            <div class="ajusteform">
+                {{ form.uf_rg.errors }}
+                {{ form.uf_rg.label_tag }}
+                <input name="uf_rg" class="inputform">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="ajusteform">
+                {{ form.nome_mae.errors }}
+                {{ form.nome_mae.label_tag }}
+                <input name="nome_mae" class="inputform">
+            </div>
+        </div>
+    </div>
+
+
+    <hr>
+
+    <p class="tituloform">Localização:</p>
+
+    <div class="formulario row">
+        <div class="col-6">
+            <div class="ajusteform">
+                {{ form.cep.errors }}
+                {{ form.cep.label_tag }}
+                <input name="cep" class="inputform">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="ajusteform">
+                {{ form.bairro.errors }}
+                {{ form.bairro.label_tag }}
+                <input name="bairro" class="inputform">
+            </div>
+        </div>
+    </div>
+    <div class="formulario row">
+        <div class="col-6">
+            <div class="ajusteform">
+                {{ form.numero.errors }}
+                {{ form.numero.label_tag }}
+                <input name="numero" class="inputform">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="ajusteform">
+                {{ form.complemento.errors }}
+                {{ form.complemento.label_tag }}
+                <input name="complemento" class="inputform">
+            </div>
+        </div>
+    </div>
+    <div class="formulario row">
+        <div class="col-6">
+            <div class="ajusteform">
+                {{ form.cidade.errors }}
+                {{ form.cidade.label_tag }}
+                <input name="cidade" class="inputform">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="ajusteform">
+                {{ form.uf.errors }}
+                {{ form.uf.label_tag }}
+                <input name="uf" class="inputform">
+            </div>
+        </div>
+    </div>
+
+
+    <hr>
+    <p class="tituloform">Inserir Documento:</p>
+
+    <div class="formulario">
+        {{ form.foto_3x4.errors }}
+        {{ form.foto_3x4.label_tag }}
+        {{ form.foto_3x4 }}
+    </div>
+    <div class="formulario">
+        {{ form.comprovante_residencia.errors }}
+        {{ form.comprovante_residencia.label_tag }}
+        {{ form.comprovante_residencia }}
+    </div>
+
+
+
+
+
+
+
+
+    <button  type="submit" class="buttonform" style="float:right; margin-bottom:10px;" value="Save"/>Salvar</button>
 </form>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+
+{% endblock %}
