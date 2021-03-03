@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .forms import SolicitacaoForm
+from .forms import SolicitacaoForm, SolicitacaoSearchForm
 from .models import Solicitacao
 from django.contrib.auth.decorators import login_required
 from .choices import *
 # Create your views here.
+query = None
+
 
 def get_servico(item):
     for i in SERVICOS:
@@ -14,13 +16,6 @@ def get_servico(item):
 
 def solicitacao_create_view(request):
     if request.method == 'POST':
-        """update_request = 
-        my_form = SolicitacaoForm(request.POST)
-        # form = SolicitacaoForm(request.POST)
-        item = my_form.cleaned_data['tipo_servico']
-        item = get_servico(item)
-        update_request.update({'servico': item})
-        form = SolicitacaoForm(update_request)"""
         form = request.POST.copy()
         item = request.POST.get('tipo_servico')
 
@@ -30,7 +25,6 @@ def solicitacao_create_view(request):
         form.update({'servicos': item1})
         form = SolicitacaoForm(form)
         if form.is_valid():
-
             form.save()
             return redirect('solicitacoes:lista_solicitacao')
         else:
@@ -45,9 +39,40 @@ def solicitacao_create_view(request):
 
 @login_required(login_url="paginas:login")
 def solicitacao_list(request):
-
-    queryset = Solicitacao.objects.all()
+    global query
+    if query == None:
+        queryset = Solicitacao.objects.all()
+    else:
+        queryset = query
+    query = None
     context = {
         "object_list": queryset
     }
     return render(request, "solicitacoes/solicitacao_list.html", context)
+
+
+@login_required(login_url="paginas:login")
+def solicitacao_search(request):
+    global query
+    if request.method == 'POST':
+        form = SolicitacaoSearchForm(request.POST)
+        if form.is_valid():
+            queryset = Solicitacao.objects.all()
+            if request.POST.get('servicos'):
+                queryset = queryset.filter(servicos=request.POST['servicos'])
+            if request.POST.get('periodo'):
+                queryset = queryset.filter(periodo=request.POST['periodo'])
+            if request.POST.get('tipo_solicitacao'):
+                queryset = queryset.filter(tipo_solicitacao=request.POST['tipo_solicitacao'])
+            if request.POST.get('turno'):
+                queryset = queryset.filter(turno=request.POST['turno'])
+            query = queryset
+            return redirect('solicitacoes:lista_solicitacao')
+        else:
+            print(form.errors)
+    else:
+        form = SolicitacaoSearchForm()
+    context = {
+        "form": form
+    }
+    return render(request, "solicitacoes/solicitacao_search.html", context)

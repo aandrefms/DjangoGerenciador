@@ -12,3 +12,10 @@ class Solicitacao(models.Model):
     periodo = models.CharField(max_length=120)
     detalhes = models.CharField(max_length=300)
     local = models.CharField(max_length=300)
+
+
+class SolicitacaoSearch(models.Model):
+    tipo_solicitacao = models.CharField(max_length=120, choices=SOLICITACOES, blank=True)
+    turno = models.CharField(max_length=120, choices=TURNO, blank=True)
+    servicos = models.CharField(max_length=120, blank=True)
+    periodo = models.CharField(max_length=120, blank=True)
