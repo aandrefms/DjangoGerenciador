@@ -1,0 +1,63 @@
+{% extends 'base_painel.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    #titulo {
+        margin:10px;
+    }
+    .form-signin {
+          width:100%;
+          max-width: 100px;
+          padding: 15px;
+          margin: 0 15% 10% 0;
+          float:right;
+
+        }
+        .form-signin .checkbox {
+          font-weight: 400;
+        }
+        .form-signin .form-control {
+          position: relative;
+          box-sizing: border-box;
+          height: auto;
+          padding: 10px;
+          font-size: 16px;
+        }
+        .form-signin .form-control:focus {
+          z-index: 2;
+        }
+        .form-signin input[type="email"] {
+          margin-bottom: -1px;
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+        .form-signin input[type="password"] {
+          margin-bottom: 7px;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+        }
+
+
+</style>
+{% load crispy_forms_tags %}
+<form   method="post"   enctype="multipart/form-data"> <input type="hidden" name="csrfmiddlewaretoken" value="7uswrLpLmWMadzBTVRU3g6Pnnr076lGPv7aNOYdn2aiDnOw3A22N7xeo2DCK4p2B">
+    {% csrf_token %}
+    <h3 class="h3 mb-3 fw-normal" id="titulo" style="text-align: center;">Alterar Senha</h3>
+    {{ form.old_password.errors }}
+    <input  name="old_password" type="password" style="width:50%; margin:auto auto 10px auto;" class="form-control" placeholder="Senha Antiga" required autofocus>
+
+    {{ form.new_password1.errors }}
+    <input  name="new_password1"    type="password" style="width:50%; margin:auto auto 10px auto;" class="form-control" placeholder="Nova Senha" required autofocus>
+
+    {{ form.new_password2.errors }}
+    <input  name="new_password2"    type="password" style="width:50%; margin:auto auto 10px auto;" class="form-control" placeholder="Repita a Nova Senha" required autofocus>
+
+<button style="width:180px; float:right;" class="w-40 btn btn-md btn-primary" type="submit">Alterar Senha</button>
+</form>
+{% endblock %}
+
+<label for="inputEmail" class="visually-hidden">Usuário</label>
+
+    <label for="inputPassword" class="visually-hidden">Senha</label>
+    <input  name="password" type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
