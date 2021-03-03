@@ -7,10 +7,6 @@ class SolicitacaoForm(forms.ModelForm):
         model = Solicitacao
         fields = '__all__'
 
-        widgets = {'detalhes': forms.Textarea(attrs={'rows': 10,
-                                                              'cols': 40,
-                                                              'style': 'resize:none;'}),
-                   'local': forms.Textarea(attrs={'rows': 10,
-                                                       'cols': 40,
-                                                       'style': 'resize:none;'}),
+        widgets = {'detalhes': forms.Textarea(attrs={}),
+                   'local': forms.Textarea(attrs={}),
                    }
