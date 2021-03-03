@@ -2,111 +2,221 @@
 {% load static %}
 {% block content %}
 {% load crispy_forms_tags %}
+
+
+<style>
+
+.buttonform {
+    font-size:1em;
+    font-family:'Roboto', sans-serif;
+    background:#2f4f4f;
+    color:white;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    border:0;
+    border-radius:5px;
+}
+
+.buttonform:hover {
+    transform: scale(1.05);
+    box-shadow: inset 2px 2px 2px rgba (0, 0, 0, 0.2);
+    text-shadow:none;
+
+}
+
+.ajusteform {
+
+    margin-right:0px;
+    display:inline-block;
+}
+
+.tituloform {
+    font-family:'Roboto', sans-serif;
+    font-size:20px;
+    color:#0A747C;
+    margin-left:20px;
+    margin-top:10px;
+}
+
+
+    .formulario{
+    font-family:'Roboto', sans-serif;
+    color:	#2f4f4f;
+    margin-top:10px;
+}
+
+
+.inputform {
+    border:1px solid #2f4f4f;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    display:inline-block;
+    border-radius:5px;
+}
+
+    .inputnome {
+    border:1px solid #2f4f4f;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    display:inline-block;
+    border-radius:5px;
+    width:30em;
+    }
+
+    .cpf-rg {
+        border:1px solid #2f4f4f;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    display:inline-block;
+    border-radius:5px;
+    width:155px;
+    }
+
+    .datatam {
+       border:1px solid #2f4f4f;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+        display:inline-block;
+        border-radius:5px;
+        width:100px;
+    }
+
+    .teltam {
+        border:1px solid #2f4f4f;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+        display:inline-block;
+        border-radius:5px;
+        width:170px;
+    }
+
+    #endereco {
+        border:1px solid #2f4f4f;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+        display:inline-block;
+        border-radius:5px;
+        width:35em;
+
+    }
+
+
+    .bairro {
+      border:1px solid #2f4f4f;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+        display:inline-block;
+        border-radius:5px;
+        width:285px;
+    }
+
+
+</style>
 <form   method="post"   enctype="multipart/form-data"> <input type="hidden">
     {% csrf_token %}
 
     <p class="tituloform">Dados pessoais:</p>
 
-    <div class="formulario">
-        {{ form.situacao_funcional.errors }}
-        {{ form.situacao_funcional.label_tag }}
-        <input name="situacao_funcional" class="inputform">
-    </div>
-    <div class="formulario row ">
-        <div class="col-6 ">
-            <div class="ajusteform">
-                {{ form.nome.errors }}
-                {{ form.nome.label_tag }}
-                <input name="nome" class="inputform">
+    <div class="formulario row">
+        <div class="col-7">
+            <div class="ajusteform" style="float:left;">
+                {{ form.situacao_funcional.errors }}
+                {{ form.situacao_funcional.label_tag }}
+                {{ form.situacao_funcional }}
             </div>
         </div>
-        <div class="col-6">
+    </div>
+    <div class="formulario row ">
+        <div class="col-8 ">
+            <div class="ajusteform" style="float:left;">
+                {{ form.nome.errors }}
+                {{ form.nome.label_tag }}
+                {{ form.nome }}
+
+            </div>
+        </div>
+        <div class="col-4">
             <div class="ajusteform">
                 {{ form.data_nascimento.errors }}
                 {{ form.data_nascimento.label_tag }}
-                <input name="data_nascimento" class="inputform">
+                {{ form.data_nascimento }}
+
             </div>
         </div>
     </div>
     <div class="formulario row">
-        <div class="col-6">
-            <div class="ajusteform">
+        <div class="col-5">
+            <div class="ajusteform" style="float:left;">
                 {{ form.telefone_residencial.errors }}
                 <label>Tel. Residencial:</label>
-                <input name="telefone_residencial" class="inputform">
+                {{ form.telefone_residencial }}
             </div>
         </div>
-        <div class="col-6">
-            <div class="ajusteform">
+        <div class="col-4">
+            <div class="ajusteform" style="float:left;">
                 {{ form.telefone_celular.errors }}
                 <label>Tel. Celular:</label>
-                <input name="telefone_celular" class="inputform">
+                {{ form.telefone_celular }}
             </div>
         </div>
-    </div>
-    <div class="formulario row">
-        <div class="col-6">
-            <div class="ajusteform">
-                {{ form.cpf.errors }}
-                {{ form.cpf.label_tag }}
-                <input name="cpf" class="inputform">
-            </div>
-        </div>
-        <div class="col-6">
-            <div class="ajusteform">
-                {{ form.rg.errors }}
-                {{ form.rg.label_tag }}
-                <input name="rg" class="inputform">
-            </div>
-        </div>
-    </div>
-    <div class="formulario row">
-        <div class="col-6">
-            <div class="ajusteform">
-                {{ form.naturalidade.errors }}
-                {{ form.naturalidade.label_tag }}
-                <input name="naturalidade" class="inputform">
-            </div>
-        </div>
-        <div class="col-6">
+        <div class="col-3">
             <div class="ajusteform">
                 {{ form.cor.errors }}
                 {{ form.cor.label_tag }}
-                <input name="cor" class="inputform">
+                {{ form.cor }}
+
+            </div>
+        </div>
+    </div>
+
+    <div class="formulario row">
+        <div class="col-4">
+            <div class="ajusteform" style="float:left;">
+                {{ form.cpf.errors }}
+                {{ form.cpf.label_tag }}
+                {{ form.cpf }}
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="ajusteform" style="align-itens:center;">
+                {{ form.rg.errors }}
+                {{ form.rg.label_tag }}
+                {{ form.rg }}
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="ajusteform">
+                {{ form.naturalidade.errors }}
+                {{ form.naturalidade.label_tag }}
+                {{ form.naturalidade }}
             </div>
         </div>
     </div>
 
 
+
     <div class="formulario row">
-        <div class="col-6">
-            <div class="ajusteform">
+        <div class="col-4">
+            <div class="ajusteform" style="float:left";>
                 {{ form.orgao_emissor.errors }}
                 {{ form.orgao_emissor.label_tag }}
-                <input name="orgao_emissor" class="inputform">
+                {{ form.orgao_emissor }}
             </div>
         </div>
-        <div class="col-6">
-            <div class="ajusteform">
-                {{ form.data_emissao_rg.errors }}
-                {{ form.data_emissao_rg.label_tag }}
-                <input name="data_emissao" class="inputform">
-            </div>
-        </div>
-    </div>
-    <div class="formulario row">
-        <div class="col-6">
+        <div class="col-4">
             <div class="ajusteform">
                 {{ form.uf_rg.errors }}
                 {{ form.uf_rg.label_tag }}
-                <input name="uf_rg" class="inputform">
+               {{ form.uf_rg }}
             </div>
         </div>
-        <div class="col-6">
+        <div class="col-4">
             <div class="ajusteform">
+                {{ form.data_emissao_rg.errors }}
+                {{ form.data_emissao_rg.label_tag }}
+                {{ form.data_emissao_rg }}
+            </div>
+        </div>
+    </div>
+    <div class="formulario row">
+        <div class="col-12">
+            <div class="ajusteform" style="float:left";>
                 {{ form.nome_mae.errors }}
                 {{ form.nome_mae.label_tag }}
-                <input name="nome_mae" class="inputform">
+                {{ form.nome_mae }}
             </div>
         </div>
     </div>
@@ -115,52 +225,62 @@
     <hr>
 
     <p class="tituloform">Localização:</p>
-
     <div class="formulario row">
-        <div class="col-6">
-            <div class="ajusteform">
-                {{ form.cep.errors }}
-                {{ form.cep.label_tag }}
-                <input name="cep" class="inputform">
-            </div>
-        </div>
-        <div class="col-6">
-            <div class="ajusteform">
-                {{ form.bairro.errors }}
-                {{ form.bairro.label_tag }}
-                <input name="bairro" class="inputform">
+        <div class="col-12">
+            <div class="ajusteform" style="float:left;">
+                {{ form.endereco.errors }}
+                {{ form.endereco.label_tag }}
+                {{ form.endereco }}
             </div>
         </div>
     </div>
     <div class="formulario row">
-        <div class="col-6">
-            <div class="ajusteform">
-                {{ form.numero.errors }}
-                {{ form.numero.label_tag }}
-                <input name="numero" class="inputform">
-            </div>
-        </div>
-        <div class="col-6">
+         <div class="col-5">
             <div class="ajusteform">
                 {{ form.complemento.errors }}
                 {{ form.complemento.label_tag }}
-                <input name="complemento" class="inputform">
+                {{ form.complemento }}
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="ajusteform">
+                {{ form.numero.errors }}
+                {{ form.numero.label_tag }}
+                {{ form.numero }}
+            </div>
+        </div>
+
+        <div class="col-5">
+            <div class="ajusteform">
+                {{ form.bairro.errors }}
+                {{ form.bairro.label_tag }}
+                 {{ form.bairro }}
             </div>
         </div>
     </div>
     <div class="formulario row">
-        <div class="col-6">
+        <div class="col-3">
+            <div class="ajusteform" style="float:left;">
+                {{ form.cep.errors }}
+                {{ form.cep.label_tag }}
+                {{ form.cep }}
+            </div>
+        </div>
+
+        <div class="col-2"></div>
+
+        <div class="col-3">
             <div class="ajusteform">
                 {{ form.cidade.errors }}
                 {{ form.cidade.label_tag }}
-                <input name="cidade" class="inputform">
+                {{ form.cidade }}
             </div>
         </div>
-        <div class="col-6">
+        <div class="col-2">
             <div class="ajusteform">
                 {{ form.uf.errors }}
                 {{ form.uf.label_tag }}
-                <input name="uf" class="inputform">
+                {{ form.uf }}
             </div>
         </div>
     </div>
