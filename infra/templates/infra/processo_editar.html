@@ -13,8 +13,38 @@
         <hr margin="10">
 <form   method="post"   enctype="multipart/form-data"> <input type="hidden" name="csrfmiddlewaretoken" value="7uswrLpLmWMadzBTVRU3g6Pnnr076lGPv7aNOYdn2aiDnOw3A22N7xeo2DCK4p2B">
     {% csrf_token %}
-    {{ form|crispy }}
-    {{ fafa|crispy }}
+<div class="formulario"  >
+    {{ form.origem_processo.errors }}
+    <label>Origem do processo:</label>
+    <input  name="origem_processo" class="inputform">
+    </div>
+    <div class="formulario">
+    {{ form.tipo_processo.errors }}
+    <label>Tipo do processo:</label>
+     {{ form.tipo_processo }}
+    </div>
+    <div class="formulario">
+     {{ form.assunto_detalhado.errors }}
+    {{ form.assunto_detalhado.label_tag }}
+    <textarea   name="assunto_detalhado" class="inputtextarea"></textarea>
+    </div>
+    <div class="formulario">
+     {{ form.natureza_processo.errors }}
+    {{ form.natureza_processo.label_tag }}
+    {{ form.natureza_processo }}
+    </div>
+    <div class="formulario">
+     {{ form.observacao.errors }}
+    <label>Observação:</label>
+    <textarea   name="observacao" class="inputtextarea"></textarea>
+    </div>
+    <div class="formulario">
+      {{ form.responsavel.errors }}
+    {{ form.responsavel.label_tag }}
+    {{ form.responsavel }}
+    <span class="helptext">{{ form.subject.help_text }}</span>
+  </div>
+
 
     <button  type="submit" class="buttonform" style="float:right; margin-bottom:10px;" value="Save"/>Salvar</button>
 </form>
