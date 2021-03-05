@@ -12,8 +12,11 @@
         <p class="paragrafo" >Preencha as informações abaixo para inserir um documento em nosso banco de dados.</p>
         <hr margin="10">
 <form   method="post"   enctype="multipart/form-data"> <input type="hidden" name="csrfmiddlewaretoken" value="7uswrLpLmWMadzBTVRU3g6Pnnr076lGPv7aNOYdn2aiDnOw3A22N7xeo2DCK4p2B">
-    {% csrf_token %}
-    {{ test|crispy }}
+
+    <div class="formulario">
+        {% csrf_token %}
+        {{ test|crispy }}
+    </div>
 <button  type="submit" class="buttonform" style="float:right; margin-bottom:10px;" value="Save"/>Salvar</button>
 </form>
 
