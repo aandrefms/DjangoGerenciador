@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Insumo
+from django.contrib.auth.admin import UserAdmin
+from .models import Funcionario
 
-# Register your models here.
-admin.site.register(Insumo)
+admin.site.register(Funcionario, UserAdmin)

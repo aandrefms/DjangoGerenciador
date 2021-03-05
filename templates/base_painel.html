@@ -267,7 +267,7 @@ a.destaque:hover {
         <nav class="navbar navbar-light border-nav1" style="background-color: #0A747C;">
             <div class="container-fluid">
                 <h9 class="letra-padrao1 mt-2"> Prefeitura municipal de Santa Inês</h9>
-                <a href="#" class="link-padrao3" >
+                <a href="{% url 'paginas:logout' %}" class="link-padrao3" >
                     <h5 style=" color:white;font-size:17px;">Sair</h5>
                 </a>
             </div>
@@ -281,7 +281,7 @@ a.destaque:hover {
                         {{ request.user.first_name }}</p><br>
                 </div>
                 <div    class="container mt-0 mb-2">
-                    <p    style="padding:0; margin:2 0 0 0;">Engenheiro de Dados </p>
+                    <p    style="padding:0; margin:2 0 0 0;">{{ request.user.funcao }}</p>
                 </div>
             </div>
             <div    style="float:right; margin: 0 2% 0 0;  display:inline;">
@@ -337,7 +337,7 @@ a.destaque:hover {
                 </div>
                 <div class="container-fluid row infor" style="width:366px; padding:13px;" >
                    {{ request.user.email }} <br>
-                   Status: Ativo <br>
+                   Status: {{ request.user.is_active }}<br>
                    Número de inscrição: 201603669
                 </div>
 
