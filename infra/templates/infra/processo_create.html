@@ -12,41 +12,46 @@
         <h2 class="titulos">Cadastrar processo</h2>
         <p class="paragrafo" >Preencha as informações abaixo para cadastrar o seu processo em nosso banco de dados.</p>
         <hr margin="10">
-<form method="post">
+<form method="post" >
     {% csrf_token %}
-  {{ form.non_field_errors }}
-    <div class="formulario"  >
-    {{ form.origem_processo.errors }}
-    <label>Origem do processo:</label>
-    <input  name="origem_processo" class="inputform">
+    {{ form.non_field_errors }}
+    <div class="formulario col-6 mb-3">
+        {{ form.origem_processo.errors }}
+        <label>Origem do processo:</label>
+        <input name="origem_processo" class="inputform">
     </div>
-    <div class="formulario">
-    {{ form.tipo_processo.errors }}
-    <label>Tipo do processo:</label>
-     {{ form.tipo_processo }}
+
+    <div class="formulario col-6 mb-3">
+        {{ form.tipo_processo.errors }}
+        <label>Tipo do processo:</label>
+        <div class="inputform">{{ form.tipo_processo }}</div>
     </div>
-    <div class="formulario">
-     {{ form.assunto_detalhado.errors }}  
-    {{ form.assunto_detalhado.label_tag }}
-    <textarea   name="assunto_detalhado" class="inputtextarea"></textarea>
+
+    <div class="formulario col-6 ">
+        {{ form.assunto_detalhado.errors }}
+        {{ form.assunto_detalhado.label_tag }}
+        <textarea name="assunto_detalhado" class="inputtextarea mb-4"></textarea>
     </div>
-    <div class="formulario">
-     {{ form.natureza_processo.errors }}
-    {{ form.natureza_processo.label_tag }}
-    {{ form.natureza_processo }}
+
+    <div class="formulario col-6">
+        {{ form.natureza_processo.errors }}
+        {{ form.natureza_processo.label_tag }}
+        <div class="inputform">{{ form.natureza_processo }}</div>
     </div>
-    <div class="formulario">
-     {{ form.observacao.errors }}
-    <label>Observação:</label>
-    <textarea   name="observacao" class="inputtextarea"></textarea>
+
+    <div class="formulario col-6">
+        {{ form.observacao.errors }}
+        <label>Observação:</label>
+        <textarea name="observacao" class="inputtextarea mb-4"></textarea>
     </div>
-    <div class="formulario">
-      {{ form.responsavel.errors }}
-    {{ form.responsavel.label_tag }}
-    {{ form.responsavel }}
-    <span class="helptext">{{ form.subject.help_text }}</span>
-  </div>
-    <button  type="submit" class="buttonform" style="float:right; margin-bottom:10px;" value="Save"/>Salvar</button>
+
+    <div class="formulario col-6">
+        {{ form.responsavel.errors }}
+        {{ form.responsavel.label_tag }}
+        <div class="inputform">{{ form.responsavel }}</div>
+        <span class="helptext">{{ form.subject.help_text }}</span>
+    </div>
+<button type="submit" class="buttonform" style="float:right; margin-bottom:10px;" value="Save"/>Salvar</button>
 </form>
 
 {% endblock %}
