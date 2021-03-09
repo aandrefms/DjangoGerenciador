@@ -50,9 +50,6 @@ class Processo(models.Model):
         return self.origem_processo
 
 
-
-
-
 class Documento(models.Model):
     tipo_documento = models.CharField(max_length=120)
     unique_documento_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
