@@ -2,10 +2,11 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .forms import ProcessoForm, DocumentoForm, FilterProcessoForm
 from .models import Processo, Documento, FilterProcesso, User
 from django.contrib.auth.decorators import login_required
+from paginas.models import Funcionario
 
 item = None
 item_group = None
-queryset_search = None
+query = None
 # Create your views here.
 @login_required(login_url='paginas:login')
 def processo_create_view(request):
@@ -41,27 +42,32 @@ def processo_create_view(request):
 
 @login_required(login_url='paginas:login')
 def processo_search1(request):
-    global queryset_search
+    global query
     if request.method == 'POST':
-        search_form = FilterProcessoForm(request.POST)
-        if search_form.is_valid():
-            queryset_search = Processo.objects.all()
+        form = FilterProcessoForm(request.POST)
+        users = Funcionario.objects.all()
+        if form.is_valid():
+            queryset = Processo.objects.all()
             if request.POST.get('unique_id'):
-                queryset_search = queryset_search.filter(unique_id=request.POST['unique_id'])
-            if request.POST.get('tipo_processo'):
-                queryset_search = queryset_search.filter(tipo_processo=request.POST['tipo_processo'])
+                queryset = queryset.filter(unique_id=request.POST['unique_id'])
             if request.POST.get('responsavel'):
-                queryset_search = queryset_search.filter(responsavel=request.POST['responsavel'])
+                queryset = queryset.filter(responsavel=request.POST['responsavel'])
+            if request.POST.get('tipo_processo'):
+                queryset = queryset.filter(tipo_processo=request.POST['tipo_processo'])
 
-            #query = queryset_search
+
+            query = queryset
             return redirect('infra:lista_processos')
         else:
-            print(search_form.errors)
+            print(form.errors)
     else:
-        search_form = FilterProcessoForm()
+        form = FilterProcessoForm()
+        """users = Funcionario.objects.all()
+        form.fields['responsavel'].choices = [('oi', 'oi')]
+        form.fields['responsavel'].initial = users"""
 
     context = {
-        'form': search_form
+        'form': form
     }
     return render(request, "infra/processo_search.html", context)
 
@@ -102,12 +108,12 @@ def processo_detalhes(request, my_id):
 
 @login_required(login_url='paginas:login')
 def processo_list(request):
-    global queryset_search
-    if queryset_search == None:
+    global query
+    if query == None:
         queryset = Processo.objects.all()
     else:
-        queryset = queryset_search
-        queryset_search = None
+        queryset = query
+        query = None
         # queryset = Processo.objects.filter(NATUREZA_PROCESSO='OSTENSIVO')
     context = {
         "object_list": queryset

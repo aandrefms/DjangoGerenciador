@@ -59,19 +59,9 @@ class Documento(models.Model):
 
 
 class FilterProcesso(models.Model):
-    '''FILTER_CHOICES = (
-        ('unique_id', 'unique_id'),
-        ('origem_processo', 'origem_processo'),
-        ('tipo_processo', 'tipo_processo'),
-        ('natureza_processo', 'natureza_processo'),
-        ('responsavel', 'responsavel'),
-    )
-    search = models.CharField(max_length=120)
-    filter_field = models.CharField(max_length=120,choices=FILTER_CHOICES, default=FILTER_CHOICES[1][0])'''
-    origem_processo = models.CharField(max_length=120, blank=True)
+    unique_id = models.CharField(max_length=120, blank=True)
     tipo_processo = models.CharField(max_length=120, blank=True)
-    assunto_detalhado = models.TextField(max_length=120, blank=True)
-    #responsavel = models.CharField(max_length=120, blank=True)
+    responsavel = models.CharField(max_length=120, blank=True)
 
 
 @receiver(post_delete, sender=Processo)

@@ -375,21 +375,7 @@ a.destaque:hover {
 
         </div>
          <hr style="background-color: rgba(36, 76, 108,0.3); width:98%;">
-        <form method="post" enctype="multipart/form-data"><input type="hidden" name="csrfmiddlewaretoken"
-                                                                 value="7uswrLpLmWMadzBTVRU3g6Pnnr076lGPv7aNOYdn2aiDnOw3A22N7xeo2DCK4p2B">
-            {% csrf_token %}
-            {{ form.non_field_errors }}
-            <div class="col-md-6 ml-3">
-                {{ form.tipo_processo.errors }}
-                {{ form.tipo_processo.label_tag }}
-                {{ form.tipo_processo }}
-            </div>
 
-            <div class="col-md-6 ml-3">
-
-            </div>
-            <button  type="submit" class="buttonform"  value="Save"/>Procurar</button>
-        </form>
 
     </div>
 

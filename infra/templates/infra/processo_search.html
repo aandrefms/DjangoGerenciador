@@ -13,10 +13,12 @@
         <p class="paragrafo" >Preencha as informações abaixo para procurar o seu processo em questão.</p>
         <hr margin="10">
 <form   method="post"   enctype="multipart/form-data"> <input type="hidden" name="csrfmiddlewaretoken" value="7uswrLpLmWMadzBTVRU3g6Pnnr076lGPv7aNOYdn2aiDnOw3A22N7xeo2DCK4p2B">
-     <div class="formulario"  >
-    {{ form.origem_processo.errors }}
-    <label>Origem do processo:</label>
-    <input  name="origem_processo" class="inputform">
+    {% csrf_token %}
+    <div class="formulario"  >
+
+    {{ form.unique_id.errors }}
+    <label>unique_id:</label>
+    <input  name="unique_id" class="inputform">
     </div>
     <div class="formulario">
     {{ form.tipo_processo.errors }}
@@ -24,11 +26,11 @@
      <input  name="tipo_processo" class="inputform">
     </div>
     <div class="formulario">
-     {{ form.assunto_detalhado.errors }}
-    {{ form.assunto_detalhado.label_tag }}
-    <textarea   name="assunto_detalhado" class="inputtextarea"></textarea>
+     {{ form.responsavel.errors }}
+    {{ form.responsavel.label_tag }}
+    {{ form.responsavel }}
     </div>
-    {% csrf_token %}
+
 
 <button  type="submit" class="buttonform" style="float:right; margin-bottom:10px;" value="Save"/>Procurar</button>
 </form>

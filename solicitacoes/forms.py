@@ -15,6 +15,3 @@ class SolicitacaoSearchForm(forms.ModelForm):
     class Meta:
         model = SolicitacaoSearch
         fields = '__all__'
-        widgets = {'detalhes': forms.Textarea(attrs={}),
-                   'local': forms.Textarea(attrs={}),
-                   }
