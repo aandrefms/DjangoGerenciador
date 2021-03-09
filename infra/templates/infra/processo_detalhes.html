@@ -1,4 +1,4 @@
-{% extends 'base_create_form.html' %}
+{% extends 'base_create_form_consulta.html' %}
 {% load static %}
 {% block content %}
 
@@ -13,6 +13,9 @@
     }
 
 </style>
+
+
+
 <div class="row" >
     <div class="col-2 titulos2" >
         Processo
@@ -25,7 +28,7 @@
 </div>
 <table>
     <div class="row">
-        <div class="col-2 margem_bloco" s>
+        <div class="col-2 margem_bloco" >
             {{ objeto.unique_id }}
         </div>
         <div class="col-10 margem_bloco" >

@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <head>
 
     <meta charset="UTF-8">
@@ -6,7 +7,6 @@
      <link rel="preconnect" href="https://fonts.gstatic.com">
     <meta   name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
     <title>Painel do usuário</title>
 
@@ -22,7 +22,7 @@
     border-bottom: 4px solid #79aec8;
     border-radius:5px;
     width:85%;
-    margin-left:7%;
+    margin:auto;
 }
 
 .border-header {
@@ -49,35 +49,7 @@
 	margin-left:0.1%;
 
 	}
-.painel {
-	width:300px;
-	height:20px;
-	background-color:#0A747C;
-	color:white;
-	border-radius:5px;
-	text-align:center;
-	padding-bottom:3px;
-	font-family: 'Roboto', sans-serif;
-	margin-left:10px;
-	display:inline-block;
-	margin-bottom:0;
-	margin-left:3%;
-	}
 
-.painel2 {
-	width:150px;
-	height:20px;
-	background-color:#0A747C;
-	color:white;
-	border-radius:5px;
-	text-align:center;
-	padding-bottom:3px;
-	font-family: 'Roboto', sans-serif;
-	float:right;
-	margin-right:17%;
-	 display:inline-block;
-	 margin-bottom:0
-	}
 
                                        /* CREATES */
 
@@ -104,17 +76,54 @@
     margin-top:10px;
 }
 
+.inputform {
+    border:1px solid #2f4f4f;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    display:inline-block;
+    border-radius:5px;
+    float:right;
+
+}
+
+.inputtextarea {
+    border:1px solid #2f4f4f;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    display:inline-block;
+    border-radius:5px;
+    width:25em;
+    height:8em;
+    resize:none;
+    display:block;
+    float:right;
+}
+
+.fonteform {
+    font-family: 'Rubik', sans-serif;
+    margin-top:1%;
+    margin-left:1%;
+    color:#244C6C;
+
+}
+
+.textform {
+    font-family: 'Rubik', sans-serif;
+    margin-top:1%;
+    margin-left:1%;
+    color:rgba(36, 76, 108,0.8);
+    font-size:0.9em;
+}
 
 
 .buttonform {
     font-size:1em;
     font-family:'Roboto', sans-serif;
-    background:#2f4f4f;
+    background:#244C6C;
     color:white;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     border:0;
     border-radius:5px;
+    margin-left:90%;
 }
 
 .buttonform:hover {
@@ -161,9 +170,8 @@
 
 #container-edit {
 	background-color:#f8f8f8;
-	height:400px;
-	border:0px;
-	width:72%;
+
+	background-color:red;
 
 	}
 
@@ -299,32 +307,10 @@ a.destaque:hover {
            display:block;
 
     }
-    .link-padrao {
-        margin-bottom:5%;
-        display:block;
-        margin-right:15%;
-        margin-left:10%;
-        margin-bottom:10px;
 
-    }
-    .link-padrao4 {
-        margin-bottom:5%;
-        display:block;
-        margin-right:15%;
-        margin-left:10%;
-        margin-bottom:10px;
-    }
 
-    .foto {
-        width:150;
-        height:170px;
-        margin-right:10%;
 
-    }
-    .painel2 {
-        margin-right:10%;
-    }
-}
+
 
 
 
@@ -382,27 +368,41 @@ a.destaque:hover {
 
     <!-- SLIDER -->
 
-    <div id="container-edit" class="container" style="width:67%;">
+    <div style="border:2px solid #244C6C;width:67%;margin:auto;border-radius:10px;background-color:#e3f2fd; margin-top:10xp; margin-bottom:10px;">
+        <div>
+            <h5 class="fonteform">Consulta de Processo:</h5>
+            <p class="textform">Preencha o formulário para encontrar o processo desejado.</p>
 
-        <div class="row justify-content-around" >
+        </div>
+         <hr style="background-color: rgba(36, 76, 108,0.3); width:98%;">
+        <form method="post" enctype="multipart/form-data"><input type="hidden" name="csrfmiddlewaretoken"
+                                                                 value="7uswrLpLmWMadzBTVRU3g6Pnnr076lGPv7aNOYdn2aiDnOw3A22N7xeo2DCK4p2B">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="col-md-6 ml-3">
+                {{ form.tipo_processo.errors }}
+                {{ form.tipo_processo.label_tag }}
+                {{ form.tipo_processo }}
+            </div>
+
+            <div class="col-md-6 ml-3">
+
+            </div>
+            <button  type="submit" class="buttonform"  value="Save"/>Procurar</button>
+        </form>
+
+    </div>
+
+
+
+
+        <div style="margin:auto;width:67%;margin:auto;" >
             <div class="col-12 border-header" style="margin-top:0px; margin-right:15px;" >
 
         {% block content %} {% endblock %}
-
             </div>
-
-
-
-
-
-
         </div>
 
-
-
-
-
-    </div>
 
 </div>
     <!-- SLIDER -->
