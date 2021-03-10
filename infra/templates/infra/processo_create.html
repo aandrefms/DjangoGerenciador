@@ -22,9 +22,17 @@
     width:25em;
     height:8em;
     resize:none;
-    display:block;
     float:right;
+
 }
+
+.formulario{
+    font-family:'Roboto', sans-serif;
+    color:	#2f4f4f;
+    margin-top:10px;
+}
+
+
 
 </style>
 
@@ -42,36 +50,34 @@
 <form method="post" >
     {% csrf_token %}
     {{ form.non_field_errors }}
-    <div class="formulario col-6 mb-3">
-        {{ form.origem_processo.errors }}
-        <label>Origem do processo:</label>
-        <input name="origem_processo" class="inputform">
+    <div class="row">
+        <div class="formulario col-6 mb-3">
+            {{ form.origem_processo.errors }}
+            <label>Origem do processo:</label>
+            <input name="origem_processo" class="inputform">
+        </div>
     </div>
-
-    <div class="formulario col-6 mb-3">
-        {{ form.tipo_processo.errors }}
-        <label>Tipo do processo:</label>
-        <div class="inputform">{{ form.tipo_processo }}</div>
+    <div class="row">
+        <div class="formulario col-6 mb-3">
+            {{ form.tipo_processo.errors }}
+            <label>Tipo do processo:</label>
+            <div class="inputform">{{ form.tipo_processo }}</div>
+        </div>
     </div>
-
-    <div class="formulario col-6 ">
+    <div class="row">
+    <div class="formulario col-6">
         {{ form.assunto_detalhado.errors }}
         {{ form.assunto_detalhado.label_tag }}
-        <textarea name="assunto_detalhado" class="inputtextarea mb-4"></textarea>
+        <textarea name="assunto_detalhado" class="inputtextarea mb-4"  ></textarea>
     </div>
-
+    </div>
+    <div class="row">
     <div class="formulario col-6">
-        {{ form.natureza_processo.errors }}
-        {{ form.natureza_processo.label_tag }}
-        <div class="inputform">{{ form.natureza_processo }}</div>
+            {{ form.observacao.errors }}
+            <label>Observação:</label>
+            <textarea name="observacao" class="inputtextarea mb-4"></textarea>
     </div>
-
-    <div class="formulario col-6">
-        {{ form.observacao.errors }}
-        <label>Observação:</label>
-        <textarea name="observacao" class="inputtextarea mb-4"></textarea>
     </div>
-
     <div class="formulario col-6">
         {{ form.responsavel.errors }}
         {{ form.responsavel.label_tag }}
