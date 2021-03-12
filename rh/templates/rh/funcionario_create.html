@@ -113,56 +113,79 @@
     <p class="tituloform">Dados pessoais:</p>
 
     <div class="formulario row">
-        <div class="col-5">
-            <div class="ajusteform" style="float:left;">
+
+
+            <div class="col-2">
                 {{ form.situacao_funcional.errors }}
                 {{ form.situacao_funcional.label_tag }}
-               {{ form.situacao_funcional }}
             </div>
-        </div>
-        <div class="col-7 ">
-            <div  class="ajusteform">
+            <div style="display:inline-block;" class="col-8">
+                {{ form.situacao_funcional }}
+            </div>
+
+    </div>
+     <div class="formulario row">
+
+
+            <div class="col-2">
                 {{ form.nome.errors }}
                 {{ form.nome.label_tag }}
+            </div>
+            <div style="display:inline-block;" class="col-8">
                 {{ form.nome }}
+            </div>
 
-            </div>
-        </div>
     </div>
-    <div class="formulario row ">
-        <div class="col-5">
-            <div class="ajusteform" style="float:left">
-                {{ form.data_nascimento.errors }}
-                {{ form.data_nascimento.label_tag }}
-                {{ form.data_nascimento }}
-            </div>
-        </div>
-        <div class="col-7">
-            <div class="ajusteform" ;>
+    <div class="formulario row mb-3">
+
+
+            <div class="col-2">
                 {{ form.nome_mae.errors }}
                 {{ form.nome_mae.label_tag }}
+            </div>
+            <div style="display:inline-block;" class="col-8">
                 {{ form.nome_mae }}
             </div>
-        </div>
+
     </div>
-    <div class="formulario row">
-        <div class="col-5">
-            <div class="ajusteform" style="float:left;">
+    <div class="formulario row" >
+
+
+            <div class="col-2">
+                {{ form.data_nascimento.errors }}
+                {{ form.data_nascimento.label_tag }}
+            </div>
+            <div style="display:inline-block;" class="col-8">
+                {{ form.data_nascimento }}
+            </div>
+
+    </div>
+    <div class="formulario row" >
+
+
+            <div class="col-2">
                 {{ form.telefone_residencial.errors }}
                 <label>Tel. Residencial:</label>
+            </div>
+            <div style="display:inline-block;" class="col-8">
                 {{ form.telefone_residencial }}
             </div>
-        </div>
+
     </div>
-    <div class="formulario row">
-        <div class="col-5" >
-            <div class="ajusteform" style="float:left;" >
+    <div class="formulario row" >
+
+
+            <div class="col-2">
                 {{ form.telefone_celular.errors }}
                 <label >Tel. Celular:</label>
-               {{ form.telefone_celular }}
             </div>
-        </div>
+            <div style="display:inline-block;" class="col-8">
+                {{ form.telefone_celular }}
+            </div>
+
     </div>
+
+
     <hr>
 
 
