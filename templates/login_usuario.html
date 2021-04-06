@@ -13,7 +13,7 @@
       height: 350px;
       width: 540px;
       float: right;
-      background-color: #C9DFEC;
+      background-color: #a9bbfd;
       padding-top: 20px;
       margin: 15px;
       border-radius: 10px;
@@ -49,6 +49,26 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+.button-edit {
+    font-size:1em;
+    font-family:'Roboto', sans-serif;
+    background: #3a4674;
+    color:white;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    border:0;
+    border-radius:5px;
+    padding:5px 20px;
+}
+
+.button-edit:hover {
+    transform: scale(1.05);
+    box-shadow: inset 2px 2px 2px rgba (0, 0, 0, 0.2);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    text-shadow:none;
+
+}
     </style>
 
 <body class="text-center"   style="">
@@ -59,8 +79,8 @@
   <form method="POST" action="">
     {% csrf_token %}
     <h1 class="h3 mb-3 fw-normal">Entrar</h1>
-    <label for="inputEmail" class="visually-hidden">Usuário</label>
-    <input  name="username" id="inputEmail" class="form-control" placeholder="Usuário" required autofocus>
+    <label for="inputEmail"  class="visually-hidden">Usuário</label>
+    <input  name="username"  id="inputEmail" class="form-control" placeholder="Usuário" required autofocus>
     <label for="inputPassword" class="visually-hidden">Senha</label>
     <input  name="password" type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
     <div class="checkbox mb-3">
@@ -68,7 +88,7 @@
         <input type="checkbox" value="remember-me"> Lembrar
       </label>
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <button class="button-edit" type="submit">Sign in</button>
 
   </form>
     </main>

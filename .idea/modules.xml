@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../../Projeto JavaScript/.idea/.idea/.idea.iml" filepath="$PROJECT_DIR$/../../Projeto JavaScript/.idea/.idea/.idea.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../FlexBox/.idea/FlexBox.iml" filepath="$PROJECT_DIR$/../../FlexBox/.idea/FlexBox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../alura-store/.idea/alura-store.iml" filepath="$PROJECT_DIR$/../../alura-store/.idea/alura-store.iml" />
+      <module fileurl="file://$USER_HOME$/Downloads/arquitetura-css-assets/.idea/arquitetura-css-assets.iml" filepath="$USER_HOME$/Downloads/arquitetura-css-assets/.idea/arquitetura-css-assets.iml" />
     </modules>
   </component>
 </project>
