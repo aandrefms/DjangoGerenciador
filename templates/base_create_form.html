@@ -6,6 +6,8 @@
      <link rel="preconnect" href="https://fonts.gstatic.com">
     <meta   name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
     <title>Painel do usuário</title>
 
@@ -17,68 +19,27 @@
 
 /* NAVS */
 
+.navbar__mae {
+    width: 100%;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+}
+
 .border-nav1 {
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
     border-radius:5px;
-    width:85%;
-    margin-left:7%;
-    background-color: #0A747C;
-}
-
-.border-header {
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-    border-radius:15px;
-    background-color:	#EAF2F8;
-    margin-bottom:15px;
-
+    width:82.5%;
+    background-color:#3a4674;
 }
 
 
 
-.letra-padrao1{
-	font-family:'Roboto', sans-serif;
-	color:white;
-	font-size:18px;
-	margin-bottom:5px;
-	}
 
 
-.letra-padrao2{
-	font-family: arial;
-	font-size:15px;
-	color: black;
-	margin-left:0.1%;
 
-	}
-.painel {
-	width:300px;
-	height:20px;
-	background-color:#0A747C;
-	color:white;
-	border-radius:5px;
-	text-align:center;
-	padding-bottom:3px;
-	font-family: 'Roboto', sans-serif;
-	margin-left:10px;
-	display:inline-block;
-	margin-bottom:0;
-	margin-left:3%;
-	}
 
-.painel2 {
-	width:150px;
-	height:20px;
-	background-color:#0A747C;
-	color:white;
-	border-radius:5px;
-	text-align:center;
-	padding-bottom:3px;
-	font-family: 'Roboto', sans-serif;
-	float:right;
-	margin-right:17%;
-	 display:inline-block;
-	 margin-bottom:0
-	}
 
                                        /* CREATES */
 
@@ -110,7 +71,7 @@
 .buttonform {
     font-size:1em;
     font-family:'Roboto', sans-serif;
-    background:#2f4f4f;
+    background:#3a4674;
     color:white;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
@@ -148,25 +109,17 @@
                                     /* Lists */
 .titulos2 {
      color:white;
-     font-family:Arial;
+     font-family: 'Poppins', sans-serif;
      text-align:center;
      font-size:16px;
      font-weight:20px;
-     background-color:#4682B4;
-     border:solid 1px;
+     background-color:#3a4674;
      border-radius:5px;
+     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
                                     /* Lists */
 
-
-#container-edit {
-	background-color:#f8f8f8;
-	height:400px;
-	border:0px;
-	width:72%;
-
-	}
 
 .linklist1 {
     color:#4682B4;
@@ -259,73 +212,8 @@ dd:hover {
 
 
 
-.destaque {
-    display: block;
-    background:#0A747C;
-    border-radius: 5px;
-    padding:8px;
-    text-align: center;
-    color: white;
-    text-decoration: none;
-    transition: all ease-out 0.2s;
-}
-
-a.destaque:hover {
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.12);
-    transform: scale(1.05);
-}
-
-.faixa {
-    background-color:#f8f8f8;
-    margin-top:10px;
-    border-radius:5px;
-}
-
-.infor {
-    font-size:13px;
-    color:#818181;
-}
-.imagens {
-    margin-bottom:3px;
-}
 
 
-
-
-                    /* MEDIAS SCREENS */
-
-
-@media screen and (max-width:1200px) {
-    #bloco1 {
-           display:block;
-
-    }
-    .link-padrao {
-        margin-bottom:5%;
-        display:block;
-        margin-right:15%;
-        margin-left:10%;
-        margin-bottom:10px;
-
-    }
-    .link-padrao4 {
-        margin-bottom:5%;
-        display:block;
-        margin-right:15%;
-        margin-left:10%;
-        margin-bottom:10px;
-    }
-
-    .foto {
-        width:150;
-        height:170px;
-        margin-right:10%;
-
-    }
-    .painel2 {
-        margin-right:10%;
-    }
-}
 
 
 
@@ -337,12 +225,13 @@ a.destaque:hover {
 
 <!-- HEADER -->
 
-<body   style="background-color:#f8f8f8;">
-<div class=" col-12 container mt-5 mb-4" style="width:82%;">
+    <body style="background-color:#f8f8f8;">
+    <div class="container mt-5 mb-4 navbar__mae"  >
     <nav class="navbar navbar-expand-lg navbar-dark  mb-2 border-nav1" >
         <div class="container">
+
             <a class="navbar-brand" href="#">
-                 <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-joystick mr-2 mb-1" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-joystick mr-2 mb-1" viewBox="0 0 16 16">
                 <path d="M10 2a2 2 0 0 1-1.5 1.937v5.087c.863.083 1.5.377 1.5.726 0 .414-.895.75-2 .75s-2-.336-2-.75c0-.35.637-.643 1.5-.726V3.937A2 2 0 1 1 10 2z"/>
                 <path d="M0 9.665v1.717a1 1 0 0 0 .553.894l6.553 3.277a2 2 0 0 0 1.788 0l6.553-3.277a1 1 0 0 0 .553-.894V9.665c0-.1-.06-.19-.152-.23L9.5 6.715v.993l5.227 2.178a.125.125 0 0 1 .001.23l-5.94 2.546a2 2 0 0 1-1.576 0l-5.94-2.546a.125.125 0 0 1 .001-.23L6.5 7.708l-.013-.988L.152 9.435a.25.25 0 0 0-.152.23z"/>
                 </svg>
@@ -353,9 +242,9 @@ a.destaque:hover {
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown" >
-                <ul class="navbar-nav">
+                <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" style="color:white;">
+                        <h6 class="nav-link" href="#" style="color:white; font-size:1.05rem; ">
                             <script>
                             var dt = new Date ();
                             var dia = dt.getDate();
@@ -366,16 +255,16 @@ a.destaque:hover {
                             document.write(dia + " de " + meses[mes] + " de " + ano)
 
                             </script>
-                        </a>
+                        </h6>
                     </li>
                     <li class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                            style="color:white;" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ request.user.first_name }}
+                            {{ request.user.first_name }}Home
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li>
-                                <a class="dropdown-item" href="{% url 'paginas:painel' %}" style="color: #0A747C;">
+                                <a class="dropdown-item" href="{% url 'paginas:painel' %}" style="color: #3a4674;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-house-door mr-2 mb-1" viewBox="0 0 16 16">
                                     <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/></svg>
                                     Página inicial
@@ -383,24 +272,24 @@ a.destaque:hover {
                             </li>
                             <li>
                                 <a class="dropdown-item" href="{% url 'paginas:alterar_senha' %}"
-                                   style="color: #0A747C;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-key imagens mr-2 mb-1"
+                                   style="color: #3a4674;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-key imagens mr-2 mb-1"
                                     viewBox="0 0 16 16">
                                      <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z"/>
                                     <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
                                     </svg>
-                                Alterar senha
+                                    Alterar senha
                                 </a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#" style="color: #0A747C;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-power mr-2 mb-1" viewBox="0 0 16 16">
-                                    <path d="M7.5 1v7h1V1h-1z"/><path d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z"/>
-                                    </svg>
-                                    Sair
+                                <a class="dropdown-item" href="#" style="color: #3a4674;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-power mr-2 mb-1" viewBox="0 0 16 16">
+                                <path d="M7.5 1v7h1V1h-1z"/><path d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z"/>
+                                </svg>
+                                Sair
                                 </a>
                             </li>
                         </ul>
@@ -413,36 +302,29 @@ a.destaque:hover {
 </div>
 
 
-
-<!-- HEADER -->
-
+    <!-- HEADER -->
 
 
     <!-- SLIDER -->
 
-    <div id="container-edit" class="container" style="width:67%;">
+    <div  class="container" style="width:67%;">
 
-        <div class="row justify-content-around" >
-            <div class="col-12 border-header" style="margin-top:0px; margin-right:15px;" >
+        <div class="row justify-content-around">
+            <div class="col-12 border-header" style="margin-top:0px; margin-right:15px;">
 
-        {% block content %} {% endblock %}
+                {% block content %} {% endblock %}
 
             </div>
-
-
-
-
 
 
         </div>
 
 
-
-
-
     </div>
 
-</div>
+    </div>
     <!-- SLIDER -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+            crossorigin="anonymous"></script>
+    </body>
