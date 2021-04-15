@@ -4,54 +4,75 @@
 
 {% load static %}
 <style>
+.border-nav1 {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    border-radius:5px;
+    width:81%;
+    background-color:#3a4674;
+}
+
+.background-list {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+        border-radius:5px;
+        background-color:	#EAF2F8;
+}
 
  .linklist2 {
     color:	#404040;
 }
 
+.center-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
 </style>
 
-
         <link rel="stylesheet" href="{% static 'css/main.css' %}">
-<div class="row" >
-    <div class="col-3 titulos2" >
+<div class="row justify-content-around" >
+    <div class="col-3 titulos2 ml-2" >
         Processo
     </div>
-    <div class="col-7 titulos2" >
+    <div class="col-6 titulos2 ml-2 mr-2" >
         Documentos
     </div>
     <div class="col-2 titulos2" >
-        Atalhos
+        Atalho
     </div>
 
 </div>
-
 {% for instance in object_list %}
-<hr>
-<div class="row">
-    <div class="col-3" style="border-right:solid 1px #DCDCDC;">
-        <div>
-            <p style="text-align:center;">{{ instance.id }} - <a class="linklist2"
-                                                                 href="{% url 'infra:detalhes_processos' instance.id %}">
-                {{ instance.origem_processo }} {{ instance.tipo_processo }}</a></p>
+<div class="row justify-content-around">
+    <div class="col-3 background-list mt-2 ml-2 ">
+        <div class="center-list">
+            <p >{{ instance.id }} -
+                <a class="linklist2" href="{% url 'infra:detalhes_processos' instance.id %}">
+                {{ instance.origem_processo }} {{ instance.tipo_processo }}
+                </a>
+            </p>
         </div>
     </div>
-    <div class="col-3" style="border-right:solid 1px #DCDCDC;">
-        <div>
-            <a href="{% url 'infra:inserir_documento' instance.id %}"
-               style="display:block;text-align:center;margin-bottom:5px;">Inserir Documento</a>
-        </div>
-        <div>
-            <a href=" {% url 'infra:editar_processo' instance.id %} " style="display:block;text-align:center;">Editar
-                Documento</a>
+    <div class="col-6 background-list mt-2 ml-2 mr-2 center-list" >
+        <div class="row">
+            <div class="col-6" >
+                <a href="{% url 'infra:inserir_documento' instance.id %}"
+                   style="display:block;text-align:center;color: #3a4674;">Inserir Documento</a>
+            </div>
+            <div class="col-6" >
+                <a href=" {% url 'infra:editar_processo' instance.id %} " style="display:block;text-align:center; color: #3a4674;">Editar
+                    Documento</a>
+            </div>
+
+            <a class="col-12 mt-1 center-list" href="{% url 'infra:lista_documentos' instance.id %}" style="display:block;text-align:center;color: #3a4674;">
+                Ver Todos os documentos do processo
+            </a>
         </div>
     </div>
-    <div class="col-4" style="border-right:solid 1px #DCDCDC;">
-        <a href="{% url 'infra:lista_documentos' instance.id %}" style="display:block;text-align:center;">Ver Todos os
-            documentos do processo</a>
-    </div>
-    <div class="col-2">
-        <div style="display:block;text-align:center;margin-top:10%;">
+    <div class="col-2 background-list mt-2 center-list">
+        <div >
             <a href="#" class="linklist2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                      fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -73,6 +94,6 @@
         </div>
     </div>
 </div>
-<hr>
+
 {% endfor %}
 {% endblock %}
