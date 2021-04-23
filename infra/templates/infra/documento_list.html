@@ -1,10 +1,15 @@
 {% load some_filters %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/main.css' %}">
-
 {% for instance in object_list %}
-<a  href="{{ instance.file.url }}">file</a><p>{{ instance.tipo_documento }}</p>
+<p>{{ instance.tipo_documento }}</p>
+<a  href="{{ instance.file.url }}">file</a></br>
+
 {% endfor %}
+
+
+
+
 
 {% if object_list %}
 <a  href="{{ object_list|pdf:'0' }} ">Download de todos os documentos do processo</a>

@@ -96,3 +96,7 @@ def menuFuncionario(request):
 @login_required(login_url='paginas:login')
 def menuProcesso(request):
     return render(request, 'menu_processo.html', {})
+
+@login_required(login_url='paginas:login')
+def menuSolicitacao(request):
+    return render(request, 'menu_solicitacao.html', {})

@@ -31,4 +31,5 @@ urlpatterns = [
     path('painelusuario/', views.painelUsuario, name='painel'),
     path('painelusuario/processo', views.menuProcesso, name='painel_processo'),
     path('painelusuario/rh', views.menuFuncionario, name='painel_rh'),
+    path('painelusuario/solicitacao', views.menuSolicitacao, name='painel_solicitacao')
 ] # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
