@@ -7,7 +7,8 @@ from .views import (
     processo_editar,
     processo_search1,
     documento_insert,
-    documento_list
+    documento_list,
+    register_despatch
 )
 
 app_name = 'infra'
@@ -19,5 +20,6 @@ urlpatterns = [
     path('processos/<int:pk>/editar', processo_editar, name='editar_processo'),
     path('processos/search', processo_search1, name='search_processo'),
     path('processos/<int:pk>/inserirdocumento', documento_insert, name='inserir_documento'),
-    path('processos/<int:pk>/documentos', documento_list, name='lista_documentos')
+    path('processos/<int:pk>/documentos', documento_list, name='lista_documentos'),
+    path('processos/<int:pk>/despatch', register_despatch, name='register_despatch')
 ]

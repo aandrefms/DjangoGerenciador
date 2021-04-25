@@ -1,5 +1,5 @@
 from django import forms
-from .models import Processo, Documento, FilterProcesso
+from .models import Processo, Documento, FilterProcesso, DespatchReceive
 from django.forms import ClearableFileInput
 
 class ProcessoForm(forms.ModelForm):
@@ -29,6 +29,11 @@ class DocumentoForm(forms.ModelForm):
         widgets = {
             'file': ClearableFileInput(attrs={'multiple': True})
         }
+
+class DespatchReceiveForm(forms.ModelForm):
+    class Meta:
+        model = DespatchReceive
+        fields = '__all__'
 
 class FilterProcessoForm(forms.ModelForm):
     class Meta:

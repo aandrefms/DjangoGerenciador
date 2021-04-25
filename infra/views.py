@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .forms import ProcessoForm, DocumentoForm, FilterProcessoForm
-from .models import Processo, Documento, FilterProcesso, User
+from .forms import ProcessoForm, DocumentoForm, FilterProcessoForm, DespatchReceiveForm
+from .models import Processo, Documento, FilterProcesso, User, DespatchReceive
 from django.contrib.auth.decorators import login_required
 from paginas.models import Funcionario
 
@@ -36,7 +36,8 @@ def processo_create_view(request):
         my_form.fields['responsavel'].choices = [(usuario, usuario)]
         my_form.fields['responsavel'].initial = [0]
     context = {
-        'form': my_form
+        'form': my_form,
+        'usuario': request.user.first_name
     }
     return render(request, "infra/processo_create.html", context)
 
@@ -175,6 +176,34 @@ def documento_list(request, pk):
         "object_list": querydoc
     }
     return render(request, "infra/documento_list.html", context)
+
+
+@login_required(login_url='paginas:login')
+def register_despatch(request, pk):
+    processo = Processo.objects.get(id=pk)
+    if request.method == 'POST':
+        # form_file = DocumentoForm(request.POST, request.FILES)
+        """form_file.fields['processo'].choices = [(queryset, queryset)]
+        form_file.fields['processo'].initial = [0]"""
+        update_request = request.POST.copy()
+        update_request.update({'processo': processo})
+        status_form = DespatchReceiveForm(update_request, request.POST)
+        if status_form.is_valid():
+            status_form.save()
+            return redirect('infra:lista_processos')
+        else:
+            print(status_form.errors)
+    else:
+        status_form = DespatchReceiveForm()
+        status_form.fields['processo'].choices = [(processo, processo)]
+        status_form.fields['processo'].initial = [0]
+        status_form.fields['secretaria'].choices = [(request.user.setor, request.user.setor)]
+        status_form.fields['secretaria'].initial = [0]
+        # form_file.fields["processo"] = 'testando'
+    context = {
+        'test': status_form
+    }
+    return render(request, "infra/register_despatch.html", context)
 
 
 

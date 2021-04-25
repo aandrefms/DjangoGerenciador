@@ -58,6 +58,14 @@ class Documento(models.Model):
                                  )
 
 
+ACAO_PROCESSO = (('Enviar', 'Enviar'), ('Receber', 'Receber'))
+class DespatchReceive(models.Model):
+    acao_processo = models.CharField(max_length=40, choices=ACAO_PROCESSO)
+    status_processo = models.CharField(max_length=40, blank=True, default='False')
+    processo = models.ForeignKey(Processo, on_delete=models.CASCADE, related_name='status_procesos')
+    secretaria = models.ForeignKey(Setor, on_delete=models.CASCADE, related_name='status_setor')
+
+
 class FilterProcesso(models.Model):
     unique_id = models.CharField(max_length=120, blank=True)
     tipo_processo = models.CharField(max_length=120, blank=True)
