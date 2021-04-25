@@ -30,6 +30,7 @@ class Setor(models.Model):
 
 
 class Processo(models.Model):
+    id = models.AutoField(primary_key=True)
     unique_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     origem_processo = models.CharField(max_length=40)
     tipo_processo = models.CharField(max_length=40, choices=TIPO_PROCESSO)
@@ -51,15 +52,17 @@ class Processo(models.Model):
 
 
 class Documento(models.Model):
-    tipo_documento = models.CharField(max_length=120)
+    id = models.AutoField(primary_key=True)
     unique_documento_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    tipo_documento = models.CharField(max_length=120)
     file = models.FileField(upload_to='../static/upload/%Y/%m/%d/', blank=True, validators=[validate_pdf])
-    processo = models.ForeignKey(Processo, on_delete=models.CASCADE, related_name='processo'
-                                 )
+    processo = models.ForeignKey(Processo, on_delete=models.CASCADE, related_name='processo')
 
 
 ACAO_PROCESSO = (('Enviar', 'Enviar'), ('Receber', 'Receber'))
 class DespatchReceive(models.Model):
+    id = models.AutoField(primary_key=True)
+    unique_despatch_receive_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     acao_processo = models.CharField(max_length=40, choices=ACAO_PROCESSO)
     status_processo = models.CharField(max_length=40, blank=True, default='False')
     processo = models.ForeignKey(Processo, on_delete=models.CASCADE, related_name='status_procesos')
@@ -67,7 +70,7 @@ class DespatchReceive(models.Model):
 
 
 class FilterProcesso(models.Model):
-    unique_id = models.CharField(max_length=120, blank=True)
+    id = models.AutoField(primary_key=True)
     tipo_processo = models.CharField(max_length=120, blank=True)
     responsavel = models.CharField(max_length=120, blank=True)
 

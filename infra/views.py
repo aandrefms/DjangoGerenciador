@@ -37,7 +37,8 @@ def processo_create_view(request):
         my_form.fields['responsavel'].initial = [0]
     context = {
         'form': my_form,
-        'usuario': request.user.first_name
+        'usuario': request.user.first_name,
+        'secretaria': request.user.setor
     }
     return render(request, "infra/processo_create.html", context)
 

@@ -6,7 +6,8 @@ from .validators import *
 
 # Create your models here.
 class Funcionario(models.Model):
-    situacao_funcional = models.CharField(max_length=120)
+    id = models.AutoField(primary_key=True)
+    situacao_funcional = models.CharField(max_length=40, choices=(('Ativo', 'Ativo'), ('Inativo', 'Inativo')))
 
     nome = models.CharField(max_length=120)
     cpf = models.CharField(max_length=120, validators=[verify_cpf])
@@ -43,6 +44,7 @@ class Funcionario(models.Model):
         return self.nome
 
 class FuncionarioQuery(models.Model):
+    id = models.AutoField(primary_key=True)
     situacao_funcional = models.CharField(max_length=120)
 
     def __str__(self):
