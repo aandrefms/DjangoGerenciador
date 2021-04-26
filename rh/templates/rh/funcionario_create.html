@@ -27,7 +27,7 @@
 .tituloform {
     font-family:'Roboto', sans-serif;
     font-size:20px;
-    color:#0A747C;
+    color:#003153;
     margin-left:20px;
     margin-top:10px;
 }
@@ -35,7 +35,7 @@
 
     .formulario{
     font-family:'Roboto', sans-serif;
-    color:	#2f4f4f;
+    color:	#003153;
     margin-top:10px;
 }
 
@@ -154,7 +154,7 @@
                 {{ form.data_nascimento.errors }}
                 {{ form.data_nascimento.label_tag }}
             </div>
-            <div style="display:inline-block;" class="col-8">
+            <div  style="display:inline-block;" class="col-8 pt-2">
                 {{ form.data_nascimento }}
             </div>
 
@@ -189,62 +189,70 @@
 
 
     <div class="formulario row">
-        <div class="col-4">
-            <div class="ajusteform" style="float:left;">
+
+            <div class="col-2 ajusteform" style="float:left;">
                 {{ form.cpf.errors }}
                 {{ form.cpf.label_tag }}
+            </div>
+            <div class="col-2" style="float: right">
                 {{ form.cpf }}
             </div>
+
+        <div class="col-2 ajusteform ml-5" style="float:left;">
+            {{ form.rg.errors }}
+            {{ form.rg.label_tag }}
         </div>
-        <div class="col-4">
-            <div class="ajusteform" style="align-itens:center;">
-                {{ form.rg.errors }}
-                {{ form.rg.label_tag }}
-                {{ form.rg }}
-            </div>
+        <div  style="float: right">
+            {{ form.rg }}
         </div>
-        <div class="col-4">
-            <div class="ajusteform">
+
+    </div>
+
+    <div class="formulario row">
+        <div class="col-2 ajusteform" style="float:left;">
                 {{ form.naturalidade.errors }}
                 {{ form.naturalidade.label_tag }}
+            </div>
+            <div class="col-2" style="float: right">
                 {{ form.naturalidade }}
             </div>
+       <div class="col-2 ajusteform ml-5" style="float:left;">
+            {{ form.orgao_emissor.errors }}
+            {{ form.orgao_emissor.label_tag }}
         </div>
+        <div  style="float: right">
+            {{ form.orgao_emissor }}
+        </div>
+
     </div>
 
 
 
     <div class="formulario row">
-        <div class="col-4">
-            <div class="ajusteform" style="float:left";>
-                {{ form.orgao_emissor.errors }}
-                {{ form.orgao_emissor.label_tag }}
-                {{ form.orgao_emissor }}
-            </div>
+
+        <div class="col-2 ajusteform" style="float:left;">
+            {{ form.uf_rg.errors }}
+            {{ form.uf_rg.label_tag }}
         </div>
-        <div class="col-4">
-            <div class="ajusteform">
-                {{ form.uf_rg.errors }}
-                {{ form.uf_rg.label_tag }}
-               {{ form.uf_rg }}
-            </div>
+        <div class="col-2" style="float: right">
+            {{ form.uf_rg }}
         </div>
-        <div class="col-4">
-            <div class="ajusteform">
-                {{ form.data_emissao_rg.errors }}
-                {{ form.data_emissao_rg.label_tag }}
-                {{ form.data_emissao_rg }}
-            </div>
+        <div class="col-2 ajusteform ml-5" style="float:left;">
+            {{ form.data_emissao_rg.errors }}
+            {{ form.data_emissao_rg.label_tag }}
+        </div>
+        <div  style="float: right">
+            {{ form.data_emissao_rg }}
         </div>
     </div>
-    <div class="formulario row">
-        <div class="col-3">
-            <div class="ajusteform" style="float:left;">
-                {{ form.cor.errors }}
-                {{ form.cor.label_tag }}
-                {{ form.cor }}
 
-            </div>
+    <div class="formulario row" >
+        <div class="col-2 ajusteform" style="float:left;">
+            {{ form.cor.errors }}
+            {{ form.cor.label_tag }}
+        </div>
+        <div class="col-2" style="float: right">
+            {{ form.cor }}
         </div>
     </div>
 
