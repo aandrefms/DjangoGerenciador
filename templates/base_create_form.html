@@ -19,23 +19,11 @@
 
 /* NAVS */
 
-.navbar__mae {
-    width: 100%;
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    align-items:center;
-}
-
 .border-nav1 {
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
     border-radius:5px;
-    width:82.5%;
-    background-color:#3a4674;
+    background-color:#003153;
 }
-
-
-
 
 
 
@@ -62,7 +50,7 @@
 
 .formulario{
     font-family:'Roboto', sans-serif;
-    color:	#2f4f4f;
+    color:	#003153;
     margin-top:10px;
 }
 
@@ -71,7 +59,7 @@
 .buttonform {
     font-size:1em;
     font-family:'Roboto', sans-serif;
-    background:#3a4674;
+    background:#003153;
     color:white;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
@@ -213,11 +201,6 @@ dd:hover {
 
 
 
-
-
-
-
-
 </style>
 
 
@@ -226,18 +209,18 @@ dd:hover {
 <!-- HEADER -->
 
     <body style="background-color:#f8f8f8;">
-    <div class="container mt-5 mb-4 navbar__mae">
+    <div class="container mt-5 mb-4 " style="width:70%;">
         <nav class="navbar navbar-expand-lg navbar-dark  mb-2 border-nav1">
             <div class="container">
 
-                <a class="navbar-brand" href="#">
+                <h6 class="navbar-brand" href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor"
                          class="bi bi-joystick mr-2 mb-1" viewBox="0 0 16 16">
                         <path d="M10 2a2 2 0 0 1-1.5 1.937v5.087c.863.083 1.5.377 1.5.726 0 .414-.895.75-2 .75s-2-.336-2-.75c0-.35.637-.643 1.5-.726V3.937A2 2 0 1 1 10 2z"/>
                         <path d="M0 9.665v1.717a1 1 0 0 0 .553.894l6.553 3.277a2 2 0 0 0 1.788 0l6.553-3.277a1 1 0 0 0 .553-.894V9.665c0-.1-.06-.19-.152-.23L9.5 6.715v.993l5.227 2.178a.125.125 0 0 1 .001.23l-5.94 2.546a2 2 0 0 1-1.576 0l-5.94-2.546a.125.125 0 0 1 .001-.23L6.5 7.708l-.013-.988L.152 9.435a.25.25 0 0 0-.152.23z"/>
                     </svg>
                     SEVED
-                </a>
+                </h6>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -257,6 +240,7 @@ dd:hover {
                             document.write(dia + " de " + meses[mes] + " de " + ano)
 
 
+
                                 </script>
                             </h6>
                         </li>
@@ -269,7 +253,8 @@ dd:hover {
                                 <li>
                                     <a class="dropdown-item" href="{% url 'paginas:painel' %}" style="color: #3a4674;">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
-                                             fill="currentColor" class="bi bi-house-door mr-2 mb-1" viewBox="0 0 16 16">
+                                             fill="currentColor"
+                                             class="bi bi-house-door mr-2 mb-1" viewBox="0 0 16 16">
                                             <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
                                         </svg>
                                         Página inicial
@@ -279,7 +264,8 @@ dd:hover {
                                     <a class="dropdown-item" href="{% url 'paginas:alterar_senha' %}"
                                        style="color: #3a4674;">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
-                                             fill="currentColor" class="bi bi-key imagens mr-2 mb-1"
+                                             fill="currentColor"
+                                             class="bi bi-key imagens mr-2 mb-1"
                                              viewBox="0 0 16 16">
                                             <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z"/>
                                             <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
@@ -291,9 +277,10 @@ dd:hover {
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#" style="color: #3a4674;">
+                                    <a class="dropdown-item" href="{% url 'paginas:logout' %}" style="color: #3a4674;">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
-                                             fill="currentColor" class="bi bi-power mr-2 mb-1" viewBox="0 0 16 16">
+                                             fill="currentColor"
+                                             class="bi bi-power mr-2 mb-1" viewBox="0 0 16 16">
                                             <path d="M7.5 1v7h1V1h-1z"/>
                                             <path d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z"/>
                                         </svg>
@@ -315,7 +302,7 @@ dd:hover {
 
     <!-- SLIDER -->
 
-    <div class="container" style="width:67%;">
+    <div class="container" style="width:67.5%;">
 
         <div class="row justify-content-around">
             <div class="col-12 border-header" style="margin-top:0px; margin-right:15px;">
@@ -323,9 +310,34 @@ dd:hover {
                 {% block content %} {% endblock %}
 
             </div>
-
-
         </div>
+    </div>
+
+    <div class="container mt-1 mb-1" style=" width:70%;">
+        <a href="#" style="color:black; font-size:15px;margin-left:10px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                 class="bi bi-mailbox imagens" viewBox="0 0 16 16">
+                <path d="M4 4a3 3 0 0 0-3 3v6h6V7a3 3 0 0 0-3-3zm0-1h8a4 4 0 0 1 4 4v6a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a4 4 0 0 1 4-4zm2.646 1A3.99 3.99 0 0 1 8 7v6h7V7a3 3 0 0 0-3-3H6.646z"/>
+                <path d="M11.793 8.5H9v-1h5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.354-.146l-.853-.854zM5 7c0 .552-.448 0-1 0s-1 .552-1 0a1 1 0 0 1 2 0z"/>
+            </svg>
+            Caixa postal
+        </a>
+        <a href="{% url 'paginas:alterar_senha' %}" style="color:black; font-size:15px;margin-left:25px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-key imagens"
+                 viewBox="0 0 16 16">
+                <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z"/>
+                <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+            </svg>
+            Alterar senha
+        </a>
+        <a href="#" style="color:black; font-size:15px;margin-left:25px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                 class="bi bi-exclamation-circle imagens" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+            </svg>
+            Ajuda
+        </a>
 
 
     </div>
