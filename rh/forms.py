@@ -13,7 +13,6 @@ class FuncionarioForm(forms.ModelForm):
                    "cidade", "uf", "telefone_residencial", "telefone_celular")"""
 
         widgets = {'cpf': forms.TextInput(attrs={'data-mask': "000.000.000-00", 'class': 'cpf-rg'}),
-                   'situacao_funcional': forms.TextInput(attrs={'class': 'cpf-rg'}),
                    'data_nascimento': forms.TextInput(attrs={'data-mask': "00/00/0000", 'class': 'datatam'}),
                    'nome': forms.TextInput(attrs={'class': 'inputnome'}),
                    'cor': forms.TextInput(attrs={'class': 'datatam'}),
